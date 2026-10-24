@@ -7,7 +7,7 @@ import { addItemToCart } from './lib/cart'
 import { useLanguage } from './language.jsx'
 
 const sellerZalo = import.meta.env.VITE_SELLER_ZALO_URL || 'https://zalo.me/'
-const sellerFacebook = 'https://www.facebook.com/profile.php?id=61594371934146'
+const sellerFacebook = import.meta.env.VITE_SELLER_FACEBOOK_URL || 'https://www.facebook.com/profile.php?id=61594371934146'
 const emailServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
 const emailTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
 const emailPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
