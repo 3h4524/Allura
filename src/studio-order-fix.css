@@ -1,0 +1,2 @@
+/* Keep Voice Message Studio section after the message fields; only the page title is first. */
+.studio-form{display:block}.studio-block,.voice-studio,.studio-form>.error,.studio-actions{order:initial}.voice-tabs{display:none}

@@ -1,0 +1,1 @@
+.phone-stage:fullscreen{width:100vw;height:100vh;min-height:100vh;border-radius:0;padding:6vh 8vw;background:linear-gradient(140deg,#c3a27c,#ead5b6 48%,#8d6d4a)}.phone-stage.preview-expanded{position:fixed;inset:0;z-index:100;background:#ead5b6;display:grid;place-items:center}.phone-stage:fullscreen .phone-card{height:min(86vh,700px);max-width:380px}

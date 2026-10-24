@@ -1,0 +1,66 @@
+/* Shared visual contract for the public page headers. */
+.topbar,
+.product-header,
+.checkout-header {
+  height: 82px;
+  padding: 0 max(32px, calc((100% - 1240px) / 2));
+  background: rgba(247, 243, 239, .88);
+  border-bottom: 1px solid rgba(232, 224, 216, .72);
+  backdrop-filter: blur(15px);
+}
+
+.topbar .brand-logo,
+.product-header .brand-logo,
+.checkout-header .brand-logo,
+.product-header .brand-mark,
+.checkout-header .brand-mark {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  font-size: 0;
+  background: transparent url('/assets/allura-round-logo.png') center / contain no-repeat;
+  mix-blend-mode: multiply;
+}
+
+.topbar nav,
+.product-header nav,
+.checkout-header nav {
+  gap: 4px;
+  padding: 4px;
+  background: #eee8e2;
+  border-radius: 30px;
+}
+
+.topbar nav button,
+.product-header nav button,
+.checkout-header nav button,
+.checkout-cart {
+  padding: 9px 16px;
+  border-radius: 22px;
+  color: #766e68;
+  font-size: 12px;
+}
+
+.topbar nav button:hover,
+.topbar nav button.active,
+.product-header nav button:hover,
+.product-header nav button.active,
+.checkout-header nav button:hover {
+  background: #fffdfb;
+  color: #292522;
+}
+
+.product-header-actions {
+  gap: 12px;
+}
+
+@media (max-width: 900px) {
+  .topbar,
+  .product-header,
+  .checkout-header { padding-left: 20px; padding-right: 20px; }
+}
+
+@media (max-width: 600px) {
+  .product-header,
+  .checkout-header { height: 68px; padding-left: 16px; padding-right: 16px; }
+}

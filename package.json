@@ -1,0 +1,27 @@
+{
+  "name": "allura",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"vite\" \"node server.js\"",
+    "client": "vite",
+    "server": "node server.js",
+    "build": "vite build",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^5.0.3",
+    "@supabase/supabase-js": "latest",
+    "@vitejs/plugin-react": "latest",
+    "concurrently": "latest",
+    "dotenv": "latest",
+    "express": "latest",
+    "i18next": "^26.5.4",
+    "lucide-react": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-i18next": "^17.1.0",
+    "vite": "latest"
+  }
+}

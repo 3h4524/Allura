@@ -1,0 +1,29 @@
+.nfc-gate-page { min-height: calc(100vh - 82px); padding: 90px 20px; display: grid; place-items: center; background: #faf6f1; }
+.nfc-gate-card { width: min(100%, 560px); padding: 48px 44px; border: 1px solid #e8ded4; border-radius: 18px; background: #fffdfb; box-shadow: 0 18px 55px rgba(83, 61, 41, .08); text-align: center; }
+.nfc-gate-icon { width: 68px; height: 68px; margin: 0 auto 24px; display: grid; place-items: center; border-radius: 50%; background: #eee1d0; color: #765b38; }
+.nfc-gate-card .eyebrow { justify-content: center; }
+.nfc-gate-card h1 { margin-top: 13px; font-size: clamp(34px, 5vw, 52px); }
+.nfc-gate-card h1 em { color: #745a37; }
+.nfc-gate-card p { max-width: 430px; margin: 18px auto 25px; font-size: 13px; }
+.nfc-gate-card .primary { margin: 0 auto; }
+.nfc-gate-back { display: block; margin: 17px auto 0; color: #897968; font-size: 11px; text-decoration: underline; text-underline-offset: 3px; }
+.nfc-choice-grid { display: grid; gap: 12px; margin: 28px auto 0; text-align: left; }
+.nfc-choice { width: 100%; display: grid; grid-template-columns: 28px 1fr auto; align-items: center; gap: 12px; padding: 16px 17px; border: 1px solid #e4d2bc; border-radius: 12px; background: #fffaf4; color: #765b38; text-align: left; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.nfc-choice:hover { transform: translateY(-2px); border-color: #b98b52; box-shadow: 0 10px 24px rgba(117, 86, 49, .1); }
+.nfc-choice span { display: grid; gap: 4px; }
+.nfc-choice strong { color: #40362d; font-size: 14px; font-weight: 600; }
+.nfc-choice small { color: #897968; font-size: 11px; }
+.nfc-choice-primary { background: #b8894f; border-color: #b8894f; color: #fffaf4; }
+.nfc-choice-primary strong, .nfc-choice-primary small { color: #fffaf4; }
+.nfc-choice-primary:hover { border-color: #9e713e; box-shadow: 0 10px 24px rgba(117, 86, 49, .2); }
+.nfc-gate-state { min-height: calc(100vh - 82px); display: grid; place-items: center; background: #faf6f1; color: #765b38; font-size: 13px; }
+.nfc-gift-shell { position: relative; }
+.nfc-warning-overlay { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 20px; background: rgba(43, 36, 31, .46); backdrop-filter: blur(6px); }
+.nfc-warning-modal { position: relative; width: min(100%, 430px); padding: 34px 30px 28px; border: 1px solid #e5c99d; border-radius: 18px; background: #fffdfb; box-shadow: 0 25px 80px rgba(32, 21, 15, .25); text-align: center; }
+.nfc-warning-modal .nfc-gate-icon { margin-bottom: 16px; }
+.nfc-warning-modal h2 { font: 500 28px/1.2 'Playfair Display'; color: #40362d; }
+.nfc-warning-modal p { margin: 12px auto 22px; color: #806b58; font-size: 12px; line-height: 1.65; }
+.nfc-warning-modal .primary { margin: 0 auto; }
+.nfc-warning-close { position: absolute; top: 13px; right: 13px; padding: 7px; color: #806b58; }
+.nfc-warning-later { display: block; margin: 15px auto 0; color: #897968; font-size: 11px; text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 580px) { .nfc-gate-card { padding: 36px 23px; } .nfc-gate-page { padding: 50px 15px; } .nfc-choice { padding: 14px; } }

@@ -1,0 +1,2 @@
+/* Login mockup is a standalone screen: no site header/footer. */
+.app:has(.auth-page) .topbar,.app:has(.auth-page) footer{display:none}.app:has(.auth-page) main{min-height:100vh}.auth-page:before{content:'ALLURA\A AMBIENT 2700K GLOW\A\A “Một kỷ niệm được thắp sáng từ tình yêu thương và sự thấu hiểu.”\A\A NFC READY';white-space:pre-wrap;line-height:2.1;letter-spacing:.12em}.auth-page:after{top:38px;left:7%;color:rgba(255,255,255,.9)}@media(max-width:700px){.app:has(.auth-page) main{min-height:100vh}.auth-page:after{display:none}}

@@ -1,0 +1,113 @@
+.experience.receiver-experience {
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+  padding: 16px;
+  display: grid;
+  place-items: center;
+  background: #ead9c2;
+}
+
+.receiver-experience .experience-top,
+.receiver-experience .experience-nav {
+  display: none;
+}
+
+.receiver-experience .experience-card {
+  width: min(100%, 390px);
+  max-height: calc(100vh - 32px);
+  margin: 0;
+  overflow-y: auto;
+  border-radius: 28px;
+  background: linear-gradient(150deg, #fffaf0, #f3e2ca);
+  border-color: rgba(255, 255, 255, .85);
+  box-shadow: 0 20px 70px rgba(36, 24, 14, .28);
+}
+
+.receiver-experience .letter {
+  min-height: calc(100vh - 32px);
+  padding: 28px 24px 34px;
+  background: transparent;
+}
+
+.receiver-experience .letter::before {
+  content: 'ALLURA';
+  display: block;
+  color: #957454;
+  font: 21px 'Playfair Display', serif;
+  letter-spacing: .16em;
+  line-height: 1;
+}
+
+.receiver-experience .letter::after {
+  content: 'LIGHT UP MEMORIES, GENTLE';
+  display: block;
+  margin-top: 4px;
+  color: #957454;
+  font: 6px 'DM Sans', sans-serif;
+  letter-spacing: .14em;
+}
+
+.receiver-experience .letter-flower {
+  display: none;
+}
+
+.receiver-experience .letter-photo {
+  width: calc(100% + 48px) !important;
+  height: 210px !important;
+  max-width: none !important;
+  margin: 24px -24px 28px !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.receiver-preview-page {
+  min-height: 100vh;
+  padding: 16px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #ead9c2;
+}
+
+.receiver-preview-page .gift-preview-canvas {
+  width: min(100%, 390px);
+  height: min(calc(100vh - 32px), 780px);
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: none;
+  border-radius: 28px;
+}
+
+.receiver-preview-page .gift-preview-canvas::-webkit-scrollbar {
+  display: none;
+}
+
+.receiver-preview-page .gift-preview-cover > img {
+  cursor: default;
+}
+
+@media (max-width: 580px) {
+  .receiver-preview-page {
+    padding: 8px;
+  }
+
+  .receiver-preview-page .gift-preview-canvas {
+    width: min(100%, 390px);
+    height: calc(100vh - 16px);
+  }
+}
+
+@media (max-width: 580px) {
+  .experience.receiver-experience {
+    padding: 8px;
+  }
+
+  .receiver-experience .experience-card {
+    max-height: calc(100vh - 16px);
+  }
+
+  .receiver-experience .letter {
+    min-height: calc(100vh - 16px);
+  }
+}

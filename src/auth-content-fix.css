@@ -1,0 +1,268 @@
+.auth-page:before{content:'ALLURA\A AMBIENT 2700K GLOW\A\A MEMORY KEEPSAKE & SMART LIGHT\A\A NFC READY'}
+
+/* Membership login layout */
+.auth-page::before, .auth-page::after { content: none; display: none; }
+.auth-page { min-height: 100vh; display: grid; grid-template-columns: 54% 46%; padding: 0; background: #fbf3eb; }
+.auth-visual { position: relative; min-height: 100vh; overflow: hidden; background: #d8b28c; }
+.auth-visual > img { width: 100%; height: 100%; object-fit: cover; object-position: 68% center; display: block; }
+.auth-visual-wash { position: absolute; inset: 0; background: linear-gradient(90deg, #4c2f1e1a, #4c2f1e00 62%), linear-gradient(0deg, #4c2f1e4d, transparent 48%); }
+.auth-visual-copy { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: flex-start; padding: 42px 8%; color: #fff9f0; text-shadow: 0 1px 8px #4c2f1e40; }
+.auth-visual-copy > span { font-size: 10px; line-height: 1.55; letter-spacing: .2em; }
+.auth-visual-copy > i { display: block; width: 38px; height: 1px; margin: 14px 0 21px; background: #fff9f0; }
+.auth-visual-copy h2 { margin: 0; font: 500 clamp(39px, 4.6vw, 68px)/.94 'Playfair Display'; letter-spacing: -.04em; }
+.auth-visual-copy h2 b { font-weight: 500; }
+.auth-visual-copy em { margin: 25px 0 0 14px; color: #fff9f0; font: italic 500 clamp(25px, 3vw, 40px)/1.05 'Playfair Display'; }
+.auth-panel { position: relative; display: grid; place-items: center; overflow: hidden; background: radial-gradient(circle at 82% 8%, #fffdf8, transparent 35%), #fbf3eb; }
+.auth-card { width: min(100% - 72px, 510px); min-height: auto; padding: 38px 34px; border-radius: 0; background: transparent; box-shadow: none; }
+.auth-card form::before, .auth-card .auth-foot::before { content: none !important; display: none !important; }
+.auth-brand { margin-bottom: 22px; color: #9a7551; font-size: 10px; letter-spacing: .2em; }
+.auth-brand span { margin-right: 6px; color: #99734e; }
+.auth-heading { margin-bottom: 24px; }
+.auth-heading h1 { color: #4e2f20; font: 500 clamp(35px, 3.2vw, 49px)/1.05 'Playfair Display'; letter-spacing: -.04em; }
+.auth-heading p { max-width: 330px; margin-top: 9px; color: #8a6e5c; font-size: 12px; line-height: 1.55; }
+.auth-card form { display: grid; gap: 17px; }
+.auth-card form > label { display: grid; gap: 7px; color: #684b39; font-size: 9px; font-weight: 700; letter-spacing: .08em; }
+.auth-card form > label > input, .auth-input { width: 100%; height: 43px; border: 1px solid #e7d8c9; border-radius: 8px; background: #fffaf5; color: #3e2e25; outline: none; }
+.auth-card form > label > input { padding: 0 12px; font-size: 11px; }
+.auth-input { display: flex; align-items: center; gap: 8px; padding: 0 11px; }
+.auth-input svg { flex: none; color: #a38365; }
+.auth-input input { min-width: 0; flex: 1; height: 100%; border: 0; outline: 0; background: transparent; color: #3e2e25; font-size: 11px; }
+.auth-input:focus-within, .auth-card form > label > input:focus { border-color: #b98b58; box-shadow: 0 0 0 3px #b98b5822; }
+.auth-eye { display: grid; place-items: center; padding: 3px; color: #9b795c; }
+.auth-forgot { align-self: end; margin-top: 3px; color: #9a704b; font-size: 9px; text-decoration: underline; }
+.auth-submit { height: 38px; margin-top: 3px; border-radius: 21px; background: #b88a52; font-size: 10px; letter-spacing: .04em; }
+.auth-submit:hover { background: #986e3f; }
+.auth-divider { position: relative; display: flex; justify-content: center; align-items: center; margin: 4px 0 0; color: #ab8c72; font-size: 9px; }
+.auth-divider::before { content: ''; position: absolute; left: 0; right: 0; border-top: 1px solid #eadfd4; }
+.auth-divider span { position: relative; padding: 0 13px; background: #fbf3eb; }
+.google-button { width: 100%; height: 35px; display: flex; align-items: center; justify-content: center; gap: 9px; border: 1px solid #e6d6c7; border-radius: 19px; color: #6f5645; font-size: 10px; }
+.google-button:hover { background: #fffaf5; }
+.google-g { color: #4285f4; font: 700 15px Arial; }
+.auth-check { width: 100%; display: flex!important; flex-direction: row; align-items: center; justify-content: flex-start; gap: 8px!important; font-weight: 400!important; letter-spacing: 0!important; }
+.auth-check input { width: 16px!important; height: 16px!important; flex: 0 0 16px; margin: 0; accent-color: #a77d51; }
+.auth-foot { margin-top: 27px; padding-top: 0; border-top: 0; color: #9c8879; font-size: 11px !important; text-align: center; }
+.auth-foot button { color: #93663e; font-size: 10px; text-decoration: underline; }
+.auth-leaf-decoration { position: absolute; right: -30px; bottom: -50px; color: #d8b28d55; font: 170px 'Playfair Display'; transform: rotate(-24deg); pointer-events: none; }
+@media(max-width:700px){.auth-page{display:block;min-height:100vh;padding:0}.auth-visual{display:none}.auth-panel{min-height:100vh;padding:25px 0}.auth-card{width:min(100% - 36px,460px);padding:24px 18px}.auth-heading h1{font-size:35px}.auth-leaf-decoration{display:none}}
+
+/* Keep the login as a focused card instead of a full-height right panel. */
+.auth-page { position: relative; display: block; min-height: 100vh; background: #f3e6dc; }
+.auth-visual { position: absolute; inset: 0 auto 0 0; width: 54%; min-height: 100vh; }
+.auth-panel { position: relative; z-index: 2; width: 46%; min-height: 100vh; margin-left: 54%; display: grid; place-items: center; padding: 56px 42px; background: transparent; }
+.auth-card { width: min(100%, 510px); padding: 44px 46px; border: 1px solid #ead8c9; border-radius: 22px; background: rgba(255, 250, 245, .94); box-shadow: 0 24px 70px rgba(102, 69, 43, .14); backdrop-filter: blur(12px); }
+.auth-leaf-decoration { display: none; }
+@media(max-width:700px){.auth-page{background:#fbf3eb}.auth-panel{width:100%;min-height:100vh;margin-left:0;padding:25px 0}.auth-card{width:min(100% - 36px,460px);padding:30px 22px;border-radius:18px}.auth-visual{display:none}}
+
+/* Merge the visual and form into one centered membership card. */
+.app:has(.auth-page) { background: #f3e6dc; }
+.app:has(.auth-page) main { min-height: 100vh; display: grid; align-items: center; justify-items: center; padding: 36px; }
+.auth-page { width: min(1180px, 100%); height: min(760px, calc(100vh - 80px)); min-height: 0; margin: 0 auto; align-self: center; justify-self: center; display: grid; grid-template-columns: 54% 46%; border-radius: 26px; overflow: hidden; box-shadow: 0 24px 80px rgba(91, 59, 35, .16); }
+.auth-visual { position: relative; inset: auto; width: auto; min-height: 100%; }
+.auth-panel { position: relative; width: auto; min-height: 100%; margin-left: 0; padding: 58px 64px; background: #fbf1e8; }
+.auth-card { width: 100%; max-width: 430px; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; backdrop-filter: none; }
+.auth-visual-copy { padding: 42px 8%; }
+.auth-visual-copy h2 { font-size: clamp(42px, 4vw, 58px); }
+@media(min-width:1000px){.auth-page{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.app:has(.auth-page) main{padding:15px}.auth-page{width:100%;height:auto;min-height:calc(100vh - 30px);margin:0;display:block;border-radius:18px;box-shadow:none}.auth-panel{min-height:100%;padding:25px 0}.auth-card{width:min(100% - 36px,460px)}}
+
+/* Full-screen auth page with the shared site chrome. */
+.app:has(.auth-page) { background: #fbf3eb; }
+.app:has(.auth-page) .site-header { display: flex; }
+.app:has(.auth-page) .site-footer { display: none; }
+.app:has(.auth-page) main { min-height: 0; display: block; padding: 0; }
+.auth-page { width: 100%; height: calc(100vh - 82px); min-height: 620px; margin: 0; display: grid; grid-template-columns: 1fr 1fr; border-radius: 0; overflow: hidden; box-shadow: none; }
+.auth-visual { position: relative; inset: auto; width: auto; min-height: 100%; }
+.auth-panel { position: relative; width: auto; min-height: 100%; margin: 0; padding: 60px 8%; display: grid; place-items: center; background: #fbf3eb; }
+.auth-card { width: min(100%, 470px); max-width: 470px; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+@media(max-width:700px){.auth-page{height:auto;min-height:calc(100vh - 68px);display:block}.auth-visual{display:none}.auth-panel{min-height:calc(100vh - 68px);padding:40px 0}.auth-card{width:min(100% - 36px,460px)}}
+.auth-success{color:#557b5b;background:#edf6ed;border:1px solid #cfe5d0;border-radius:8px;padding:10px;font-size:11px;line-height:1.5}
+
+/* Use the dedicated login artwork without the old baked-in visual copy. */
+.auth-visual { background: url('/assets/allura-login-bg.png') center center / cover no-repeat; }
+.auth-visual > img { opacity: 0; object-position: center center; }
+.auth-visual-copy { display: none; }
+@media (max-width: 700px) {
+  .app:has(.auth-page) {
+    width: 100%;
+    overflow-x: hidden;
+    background: #fbf3eb;
+  }
+
+  .app:has(.auth-page) main {
+    width: 100%;
+    min-height: 0;
+    padding: 0;
+  }
+
+  .auth-page {
+    width: 100%;
+    max-width: 100%;
+    min-height: calc(100dvh - 82px);
+    height: auto;
+    display: block;
+    padding: 22px 12px 34px;
+    background: #fbf3eb;
+  }
+
+  .auth-page::before,
+  .auth-page::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  .auth-visual {
+    display: none;
+  }
+
+  .auth-panel {
+    width: 100%;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    display: block;
+    background: transparent;
+  }
+
+  .auth-card {
+    width: 100%;
+    max-width: 460px;
+    min-height: 0;
+    margin: 0 auto;
+    padding: 27px 18px 24px;
+    border: 1px solid #ead8c9;
+    border-radius: 16px;
+    background: rgba(255, 253, 251, .96);
+    box-shadow: 0 16px 42px rgba(102, 69, 43, .1);
+  }
+
+  .auth-card form::before,
+  .auth-card form > label:first-of-type::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  .auth-brand {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 9px;
+  }
+
+  .auth-heading {
+    margin-bottom: 22px;
+    text-align: center;
+  }
+
+  .auth-heading h1 {
+    font-size: 34px;
+    line-height: 1.04;
+  }
+
+  .auth-heading p {
+    max-width: 310px;
+    margin: 10px auto 0;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .auth-card form {
+    gap: 14px;
+  }
+
+  .auth-card form > label {
+    gap: 6px;
+    font-size: 9px;
+  }
+
+  .auth-card form > label > input,
+  .auth-input {
+    height: 46px;
+    border-radius: 8px;
+  }
+
+  .auth-card form > label > input {
+    padding: 0 12px;
+    font-size: 16px;
+  }
+
+  .auth-input {
+    gap: 8px;
+    padding: 0 11px;
+  }
+
+  .auth-input input {
+    font-size: 16px;
+  }
+
+  .auth-eye {
+    padding: 6px;
+  }
+
+  .auth-forgot {
+    margin-top: 2px;
+    font-size: 10px;
+  }
+
+  .auth-check {
+    align-items: flex-start !important;
+    font-size: 10px !important;
+    line-height: 1.45;
+  }
+
+  .auth-check input {
+    margin-top: 1px;
+  }
+
+  .auth-card .error,
+  .auth-success {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .auth-submit {
+    width: 100%;
+    height: 46px;
+    margin-top: 2px;
+    border-radius: 23px;
+    font-size: 11px;
+  }
+
+  .auth-divider {
+    margin: 2px 0;
+    font-size: 9px;
+  }
+
+  .google-button {
+    height: 44px;
+    border-radius: 22px;
+    font-size: 11px;
+  }
+
+  .auth-foot {
+    margin-top: 21px !important;
+    font-size: 10px !important;
+    line-height: 1.5;
+  }
+
+  .auth-foot button {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 390px) {
+  .auth-page {
+    padding: 16px 10px 28px;
+  }
+
+  .auth-card {
+    padding: 24px 15px 21px;
+    border-radius: 14px;
+  }
+
+  .auth-heading h1 {
+    font-size: 31px;
+  }
+
+  .auth-heading p {
+    font-size: 11px;
+  }
+}

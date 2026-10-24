@@ -1,0 +1,1 @@
+.phone-card .letter-photo,.experience .letter-photo,.gift-preview-cover > img{cursor:grab;touch-action:none;user-select:none}.phone-card .letter-photo:active,.experience .letter-photo:active,.gift-preview-cover > img:active{cursor:grabbing}

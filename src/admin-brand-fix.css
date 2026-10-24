@@ -1,0 +1,15 @@
+.admin-brand-logo {
+  width: 42px;
+  height: 42px;
+  display: block;
+  object-fit: contain;
+  flex: none;
+}
+
+.admin-brand {
+  cursor: default;
+}
+
+.admin-form .admin-field:has(input[name="quantity"]) {
+  display: none;
+}

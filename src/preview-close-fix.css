@@ -1,0 +1,117 @@
+.gift-preview-top > button {
+  display: none;
+}
+
+section.gallery-studio-page .gift-preview-top {
+  position: relative !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+section.gallery-studio-page .gift-preview-top > span {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+section.gallery-studio-page .gift-preview-top > button:last-child:not(.preview-close-inline) {
+  display: grid !important;
+  place-items: center;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  color: transparent;
+  font-size: 0;
+}
+
+section.gallery-studio-page .gift-preview-top > button:last-child:not(.preview-close-inline)::before {
+  content: '×';
+  color: #745a37;
+  font: 24px/1 Arial, sans-serif;
+}
+
+section.gallery-studio-page .gift-preview-top > .preview-close-inline {
+  display: grid !important;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #745a37;
+  font: 24px/1 Arial, sans-serif;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+section.gallery-studio-page .gift-preview-cover {
+  height: 220px !important;
+}
+
+section.gallery-studio-page .gift-preview-cover .preview-lamp {
+  height: 100% !important;
+  margin: 0 !important;
+  background: url('/assets/allura-preview-lamp.png') center / cover no-repeat !important;
+}
+
+section.gallery-studio-page .gift-preview-cover .preview-lamp::before,
+section.gallery-studio-page .gift-preview-cover .preview-lamp::after,
+section.gallery-studio-page .gift-preview-cover .preview-lamp > div {
+  display: none !important;
+}
+
+section.gallery-studio-page .gift-preview-canvas.gift-preview-expanded .gift-preview-cover {
+  height: 220px !important;
+}
+
+section.gallery-studio-page .gift-preview-gallery {
+  counter-reset: gallery-index;
+}
+
+section.gallery-studio-page .gift-preview-gallery > button {
+  counter-increment: gallery-index;
+  position: relative;
+}
+
+section.gallery-studio-page .gift-preview-gallery > button::after {
+  content: counter(gallery-index);
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 3px;
+  border-radius: 9px;
+  background: rgba(48, 38, 28, .72);
+  color: #fffaf1;
+  font: 9px/16px 'DM Sans', sans-serif;
+}
+
+body.gift-preview-modal-open .gift-preview-canvas.gift-preview-expanded + .preview-full {
+  display: grid !important;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 0 !important;
+}
+
+body.gift-preview-modal-open .gift-preview-canvas.gift-preview-expanded + .preview-full svg {
+  display: none;
+}
+
+body.gift-preview-modal-open .gift-preview-canvas.gift-preview-expanded + .preview-full::before {
+  content: '×';
+  font: 28px/1 Arial, sans-serif;
+  color: #fff;
+}
+

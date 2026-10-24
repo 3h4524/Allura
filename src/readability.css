@@ -1,0 +1,102 @@
+/* Sharper, slightly heavier type for Windows/browser rendering. */
+body {
+  font-weight: 450;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-synthesis: none;
+}
+
+/* Compact sticky header: it remains visible while taking less space after scrolling. */
+.topbar {
+  position: sticky;
+  top: 0;
+  transition: height .25s ease, padding .25s ease, box-shadow .25s ease, background .25s ease;
+}
+
+.topbar.is-compact {
+  height: 62px;
+  padding-left: max(24px, calc((100% - 1240px) / 2));
+  padding-right: max(24px, calc((100% - 1240px) / 2));
+  background: rgba(247, 243, 239, .96);
+  box-shadow: 0 5px 20px rgba(84, 65, 48, .08);
+}
+
+.topbar.is-compact .brand-mark {
+  width: 27px;
+  height: 27px;
+  font-size: 20px;
+}
+
+.topbar.is-compact .brand b {
+  font-size: 19px;
+}
+
+.topbar.is-compact .brand span {
+  font-size: 7px;
+}
+
+.topbar.is-compact nav button {
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.topbar.is-compact + .mobile-nav {
+  top: 62px;
+}
+
+p,
+button,
+input,
+textarea,
+select,
+label,
+small,
+span {
+  font-weight: 450;
+}
+
+h1,
+h2,
+h3,
+.brand b,
+.phone-card h2,
+.letter h1,
+.voice-studio-heading .studio-label,
+.studio-heading h1,
+.mock-feature h3,
+.craft-copy h2,
+.guide-step-card h3,
+.guide-receiver .center-heading h2,
+.guide-help h2,
+.guide-bottom-cta h2 {
+  font-weight: 600;
+  text-rendering: optimizeLegibility;
+}
+
+.topbar nav button,
+.login-link,
+.primary,
+.outline,
+.studio-label,
+.auth-card label,
+.setup-form label,
+.receiver-card label,
+.voice-tabs button,
+.voice-mode-switch button,
+.google-button {
+  font-weight: 500;
+}
+
+.studio-form input,
+.studio-form textarea,
+.auth-card input,
+.setup-form input,
+.setup-form textarea,
+.receiver-card input {
+  font-weight: 450;
+}
+
+::placeholder {
+  opacity: 0.72;
+  font-weight: 400;
+}
