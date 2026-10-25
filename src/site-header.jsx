@@ -115,7 +115,7 @@ export default function SiteHeader({ onNavigate, active = '', showLogin = true, 
 
 function LegacyFooter() {
   const { copy } = useLanguage()
-  return <footer className="site-footer"><div className="site-brand"><img src="/assets/allura-logo-transparent.png" alt="Allura" /><span><b>Allura</b></span></div><p>{copy.footer}</p><span>© 2024 Allura. Made with care.</span></footer>
+  return <footer className="site-footer"><div className="site-brand"><img src="/assets/allura-logo-transparent.png" alt="Allura" /><span><b>Allura</b></span></div><p>{copy.footer}</p><span>© 2026 Allura. Made with care.</span></footer>
 }
 
 export function SiteFooter() {
@@ -162,6 +162,6 @@ export function SiteFooter() {
       <div className="site-footer-column"><h3>{vi ? 'PHÁP LÝ & HỖ TRỢ' : 'LEGAL & SUPPORT'}</h3>{help.map(([label, path]) => <a key={label} href={path} onClick={event => { event.preventDefault(); go(path) }}>{label}</a>)}</div>
       <div className="site-footer-newsletter"><h3>{vi ? 'BẢN TIN YÊU THƯƠNG' : 'A NOTE FROM ALLURA'}</h3><p>{vi ? 'Đăng ký nhận gợi ý đóng gói quà tặng và các bộ sưu tập ánh sáng giới hạn theo mùa.' : 'Receive gift ideas, seasonal notes and limited light collections.'}</p><form onSubmit={submitNewsletter}><Mail size={16}/><input type="email" value={newsletterEmail} onChange={event => { setNewsletterEmail(event.target.value); if (newsletterState !== 'idle') setNewsletterState('idle') }} placeholder={vi ? 'Email của bạn...' : 'Your email...'} aria-label={vi ? 'Email của bạn' : 'Your email'} required disabled={newsletterState === 'sending'} /><button type="submit" disabled={newsletterState === 'sending'}>{newsletterState === 'sending' ? '…' : vi ? 'Gửi' : 'Join'}</button></form>{newsletterState === 'sent' && <small className="newsletter-feedback success">{vi ? 'Đã gửi thông tin đăng ký.' : 'Subscription sent.'}</small>}{newsletterState === 'error' && <small className="newsletter-feedback error">{vi ? 'Không thể gửi, vui lòng thử lại.' : 'Could not send. Please try again.'}</small>}<small>{vi ? <>Hotline hỗ trợ: <a href="tel:0935427618">{supportPhone}</a> (09:00 – 21:00 hàng ngày)</> : <>Support: <a href="tel:0935427618">{supportPhone}</a> (09:00 – 21:00 daily)</>}</small></div>
     </div>
-    <div className="site-footer-bottom"><span>© 2024 Allura Smart Living. {vi ? 'Bản quyền thuộc về Allura.' : 'All rights reserved by Allura.'}</span><div><a href="/san-pham" onClick={event => { event.preventDefault(); go("/san-pham") }}><ShieldCheck size={13}/> {vi ? 'Đèn thủ công tinh xảo' : 'Crafted with care'}</a><a href="/huong-dan" onClick={event => { event.preventDefault(); go("/huong-dan") }}><MessageCircle size={13}/> {vi ? 'Công nghệ chạm cảm xúc' : 'Touch the feeling'}</a><ArrowUpRight size={13}/></div></div>
+    <div className="site-footer-bottom"><span>© 2026 Allura Smart Living. {vi ? 'Bản quyền thuộc về Allura.' : 'All rights reserved by Allura.'}</span><div><a href="/san-pham" onClick={event => { event.preventDefault(); go("/san-pham") }}><ShieldCheck size={13}/> {vi ? 'Đèn thủ công tinh xảo' : 'Crafted with care'}</a><a href="/huong-dan" onClick={event => { event.preventDefault(); go("/huong-dan") }}><MessageCircle size={13}/> {vi ? 'Công nghệ chạm cảm xúc' : 'Touch the feeling'}</a><ArrowUpRight size={13}/></div></div>
   </footer>
 }
