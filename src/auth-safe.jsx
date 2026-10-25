@@ -14,8 +14,12 @@ function normalizeLoginEmail(value) {
 
 async function getPostLoginPath(user) {
   if (!user || !supabase) return '/thiet-lap-mon-qua'
-  const { data: profile } = await supabase.from('profiles').select('is_admin').eq('id', user.id).maybeSingle()
-  return profile?.is_admin ? '/admin' : '/thiet-lap-mon-qua'
+  try {
+    const { data: profile } = await supabase.from('profiles').select('is_admin').eq('id', user.id).maybeSingle()
+    return profile?.is_admin ? '/admin' : '/thiet-lap-mon-qua'
+  } catch {
+    return '/thiet-lap-mon-qua'
+  }
 }
 
 export default function AuthSafe({ mode, onNavigate }) {
@@ -110,6 +114,14 @@ export default function AuthSafe({ mode, onNavigate }) {
   useEffect(() => {
     if (!login || !supabase) return undefined
 
+    const callbackParams = new URLSearchParams(window.location.hash.replace(/^#/, ''))
+    const callbackError = callbackParams.get('error_description') || callbackParams.get('error')
+    if (callbackError) {
+      sessionStorage.removeItem(GOOGLE_AUTH_PENDING_KEY)
+      setError(callbackError)
+      window.history.replaceState({}, document.title, `${window.location.pathname}${window.location.search}`)
+    }
+
     const continueAfterGoogle = async (event, session) => {
       if (!session || !['SIGNED_IN', 'INITIAL_SESSION'].includes(event)) return
       if (sessionStorage.getItem(GOOGLE_AUTH_PENDING_KEY) !== '1') return
@@ -138,16 +150,24 @@ export default function AuthSafe({ mode, onNavigate }) {
     sessionStorage.setItem(GOOGLE_AUTH_PENDING_KEY, '1')
     setBusy(true)
 
-    const { error: oauthError } = await supabase.auth.signInWithOAuth({
-      provider: 'google',
-      options: {
-        redirectTo: `${window.location.origin}/dang-nhap`,
-      },
-    })
+    try {
+      const { error: oauthError } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: `${window.location.origin}/dang-nhap`,
+        },
+      })
 
-    if (oauthError) {
+      if (oauthError) throw oauthError
+    } catch (eventError) {
       sessionStorage.removeItem(GOOGLE_AUTH_PENDING_KEY)
-      setError(oauthError.message || copy.genericLogin)
+      const message = String(eventError?.message || '')
+      setError(
+        /failed to fetch|network error|fetch failed/i.test(message)
+          ? copy.network
+          : message || copy.genericLogin,
+      )
+    } finally {
       setBusy(false)
     }
   }
