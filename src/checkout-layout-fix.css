@@ -184,7 +184,7 @@
   }
 
   .checkout-summary {
-    order: 2;
+    order: -1;
   }
 
   .summary-title {
