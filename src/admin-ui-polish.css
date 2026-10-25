@@ -396,3 +396,94 @@
     font-size: 23px;
   }
 }
+
+@media (max-width: 640px) {
+  .admin-table-wrap {
+    overflow: visible;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .admin-tracking-table {
+    display: block;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .admin-tracking-table thead {
+    display: none;
+  }
+
+  .admin-tracking-table tbody {
+    display: grid;
+    gap: 12px;
+  }
+
+  .admin-tracking-table tr {
+    display: block;
+    overflow: hidden;
+    border: 1px solid #e8dfd5;
+    border-radius: 14px;
+    background: #fffdfb;
+    box-shadow: 0 10px 24px rgba(93, 67, 43, .05);
+  }
+
+  .admin-tracking-table td {
+    display: grid;
+    grid-template-columns: minmax(82px, 31%) minmax(0, 1fr);
+    align-items: start;
+    gap: 10px;
+    min-width: 0;
+    padding: 11px 12px;
+    border-bottom: 1px solid #f0e9e2;
+  }
+
+  .admin-tracking-table td::before {
+    content: attr(data-label);
+    color: #9a887b;
+    font-size: 9px;
+    line-height: 1.4;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+  }
+
+  .admin-tracking-table td:last-child {
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 0;
+    padding-top: 10px;
+  }
+
+  .admin-tracking-table td:last-child::before,
+  .admin-tracking-table .admin-table-empty::before {
+    display: none;
+  }
+
+  .admin-tracking-table .admin-table-empty {
+    display: block;
+    padding: 28px 12px !important;
+  }
+
+  .tracking-token,
+  .tracking-person {
+    min-width: 0;
+  }
+
+  .tracking-token code,
+  .tracking-token small,
+  .tracking-person span,
+  .tracking-person small {
+    max-width: 100%;
+  }
+
+  .tracking-actions {
+    margin-left: auto;
+  }
+
+  .admin-pagination {
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 4px;
+  }
+}
