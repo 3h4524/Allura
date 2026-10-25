@@ -184,7 +184,7 @@ export default function AdminCodePage({ onNavigate }) {
   if (!allowed) return <section className="admin-state"><ShieldCheck size={32}/><h1>Khu vực dành cho admin</h1><p>Tài khoản này chưa được cấp quyền truy cập.</p><button className="primary" onClick={() => onNavigate(user ? '/' : '/dang-nhap')}>{user ? 'Về trang chủ' : 'Đăng nhập'}</button></section>
 
   return <div className="admin-page">
-    <header className="admin-header"><div className="admin-brand"><img className="admin-brand-logo" src="/assets/allura-round-logo.png" alt="Allura" /><span><b>Allura Admin</b><small>gift issuing console</small></span></div><div className="admin-actions"><button onClick={load} title="Làm mới" aria-label="Làm mới"><RefreshCw size={16}/> Làm mới</button><button onClick={signOut} title="Đăng xuất" aria-label="Đăng xuất"><LogOut size={16}/> Đăng xuất</button></div></header>
+    <header className="admin-header"><div className="admin-brand"><img className="admin-brand-logo" src="/assets/allura-logo-transparent.png" alt="Allura" /><span><b>Allura Admin</b><small>gift issuing console</small></span></div><div className="admin-actions"><button onClick={load} title="Làm mới" aria-label="Làm mới"><RefreshCw size={16}/> Làm mới</button><button onClick={signOut} title="Đăng xuất" aria-label="Đăng xuất"><LogOut size={16}/> Đăng xuất</button></div></header>
     <main className="admin-layout">
       <section className="admin-main">
         <div className="admin-intro"><div><div className="eyebrow"><Sparkles size={15}/> QUẢN LÝ QUÀ TẶNG</div><h1>Tạo món quà<br/><em>& phát hành NFC.</em></h1><p>Tạo token trước, sau đó người mua sẽ đăng nhập để nhận đèn và tự thiết lập nội dung.</p></div><div className="admin-stat"><b>{orders.length}</b><span>Đơn đã tạo</span></div></div>

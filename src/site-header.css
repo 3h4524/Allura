@@ -18,7 +18,7 @@
   height: 38px;
   object-fit: contain;
   font-size: 0;
-  background: transparent url('/assets/allura-round-logo.png') center / contain no-repeat;
+  background: transparent url('/assets/allura-logo-transparent.png') center / contain no-repeat;
   mix-blend-mode: multiply;
 }
 

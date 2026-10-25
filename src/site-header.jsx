@@ -99,7 +99,7 @@ export default function SiteHeader({ onNavigate, active = '', showLogin = true, 
   ) : null
   return <>
     <header className="site-header">
-      <button className="site-brand" onClick={() => navigate('/')} aria-label="Allura"><img src="/assets/allura-round-logo.png" alt="Allura" /><span><b>Allura</b></span></button>
+      <button className="site-brand" onClick={() => navigate('/')} aria-label="Allura"><img src="/assets/allura-logo-transparent.png" alt="Allura" /><span><b>Allura</b></span></button>
       <nav>{navLinks.map(([key, path, label]) => <button key={key} className={active === key ? 'active' : ''} onClick={() => navigate(path)}>{label}</button>)}</nav>
       <div className="site-header-actions">
         <div className="language-switcher" aria-label="Language selector"><button className={language === 'vi' ? 'active' : ''} onClick={() => setLanguage('vi')}>VI</button><span>/</span><button className={language === 'en' ? 'active' : ''} onClick={() => setLanguage('en')}>EN</button></div>
@@ -114,7 +114,7 @@ export default function SiteHeader({ onNavigate, active = '', showLogin = true, 
 
 function LegacyFooter() {
   const { copy } = useLanguage()
-  return <footer className="site-footer"><div className="site-brand"><img src="/assets/allura-round-logo.png" alt="Allura" /><span><b>Allura</b></span></div><p>{copy.footer}</p><span>© 2024 Allura. Made with care.</span></footer>
+  return <footer className="site-footer"><div className="site-brand"><img src="/assets/allura-logo-transparent.png" alt="Allura" /><span><b>Allura</b></span></div><p>{copy.footer}</p><span>© 2024 Allura. Made with care.</span></footer>
 }
 
 export function SiteFooter() {
