@@ -21,7 +21,7 @@
 .nfc-warning-overlay { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 20px; background: rgba(43, 36, 31, .46); backdrop-filter: blur(6px); }
 .nfc-warning-modal { position: relative; width: min(100%, 430px); padding: 34px 30px 28px; border: 1px solid #e5c99d; border-radius: 18px; background: #fffdfb; box-shadow: 0 25px 80px rgba(32, 21, 15, .25); text-align: center; }
 .nfc-warning-modal .nfc-gate-icon { margin-bottom: 16px; }
-.nfc-warning-modal h2 { font: 500 28px/1.2 'Playfair Display'; color: #40362d; }
+.nfc-warning-modal h2 { font: 500 28px/1.2 'Playfair Display', serif; color: #40362d; }
 .nfc-warning-modal p { margin: 12px auto 22px; color: #806b58; font-size: 12px; line-height: 1.65; }
 .nfc-warning-modal .primary { margin: 0 auto; }
 .nfc-warning-close { position: absolute; top: 13px; right: 13px; padding: 7px; color: #806b58; }

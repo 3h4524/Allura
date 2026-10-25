@@ -6,7 +6,7 @@
 .legal-hero p { max-width: 620px; margin-top: 22px; font-size: 15px; }
 .legal-sections { max-width: 900px; display: grid; gap: 14px; }
 .legal-sections article { display: grid; grid-template-columns: 55px 1fr; gap: 22px; padding: 28px 30px; border: 1px solid #e8ded4; border-radius: 14px; background: #fffdfb; }
-.legal-sections article > span { color: #a5875a; font: 24px 'Playfair Display'; }
+.legal-sections article > span { color: #a5875a; font: 24px 'Playfair Display', serif; }
 .legal-sections h2 { font-size: 25px; color: #40362d; }
 .legal-sections p { margin-top: 8px; font-size: 13px; }
 @media (max-width: 580px) { .legal-hero { padding-top: 40px; padding-bottom: 35px; } .legal-back { margin-bottom: 38px; } .legal-sections article { grid-template-columns: 35px 1fr; gap: 12px; padding: 22px 18px; } .legal-sections h2 { font-size: 21px; } }

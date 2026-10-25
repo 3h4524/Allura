@@ -9,16 +9,16 @@
 .auth-visual-copy { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: flex-start; padding: 42px 8%; color: #fff9f0; text-shadow: 0 1px 8px #4c2f1e40; }
 .auth-visual-copy > span { font-size: 10px; line-height: 1.55; letter-spacing: .2em; }
 .auth-visual-copy > i { display: block; width: 38px; height: 1px; margin: 14px 0 21px; background: #fff9f0; }
-.auth-visual-copy h2 { margin: 0; font: 500 clamp(39px, 4.6vw, 68px)/.94 'Playfair Display'; letter-spacing: -.04em; }
+.auth-visual-copy h2 { margin: 0; font: 500 clamp(39px, 4.6vw, 68px)/.94 'Playfair Display', serif; letter-spacing: -.04em; }
 .auth-visual-copy h2 b { font-weight: 500; }
-.auth-visual-copy em { margin: 25px 0 0 14px; color: #fff9f0; font: italic 500 clamp(25px, 3vw, 40px)/1.05 'Playfair Display'; }
+.auth-visual-copy em { margin: 25px 0 0 14px; color: #fff9f0; font: italic 500 clamp(25px, 3vw, 40px)/1.05 'Playfair Display', serif; }
 .auth-panel { position: relative; display: grid; place-items: center; overflow: hidden; background: radial-gradient(circle at 82% 8%, #fffdf8, transparent 35%), #fbf3eb; }
 .auth-card { width: min(100% - 72px, 510px); min-height: auto; padding: 38px 34px; border-radius: 0; background: transparent; box-shadow: none; }
 .auth-card form::before, .auth-card .auth-foot::before { content: none !important; display: none !important; }
 .auth-brand { margin-bottom: 22px; color: #9a7551; font-size: 10px; letter-spacing: .2em; }
 .auth-brand span { margin-right: 6px; color: #99734e; }
 .auth-heading { margin-bottom: 24px; }
-.auth-heading h1 { color: #4e2f20; font: 500 clamp(35px, 3.2vw, 49px)/1.05 'Playfair Display'; letter-spacing: -.04em; }
+.auth-heading h1 { color: #4e2f20; font: 500 clamp(35px, 3.2vw, 49px)/1.05 'Playfair Display', serif; letter-spacing: -.04em; }
 .auth-heading p { max-width: 330px; margin-top: 9px; color: #8a6e5c; font-size: 12px; line-height: 1.55; }
 .auth-card form { display: grid; gap: 17px; }
 .auth-card form > label { display: grid; gap: 7px; color: #684b39; font-size: 9px; font-weight: 700; letter-spacing: .08em; }
@@ -42,7 +42,7 @@
 .auth-check input { width: 16px!important; height: 16px!important; flex: 0 0 16px; margin: 0; accent-color: #a77d51; }
 .auth-foot { margin-top: 27px; padding-top: 0; border-top: 0; color: #9c8879; font-size: 11px !important; text-align: center; }
 .auth-foot button { color: #93663e; font-size: 10px; text-decoration: underline; }
-.auth-leaf-decoration { position: absolute; right: -30px; bottom: -50px; color: #d8b28d55; font: 170px 'Playfair Display'; transform: rotate(-24deg); pointer-events: none; }
+.auth-leaf-decoration { position: absolute; right: -30px; bottom: -50px; color: #d8b28d55; font: 170px 'Playfair Display', serif; transform: rotate(-24deg); pointer-events: none; }
 @media(max-width:700px){.auth-page{display:block;min-height:100vh;padding:0}.auth-visual{display:none}.auth-panel{min-height:100vh;padding:25px 0}.auth-card{width:min(100% - 36px,460px);padding:24px 18px}.auth-heading h1{font-size:35px}.auth-leaf-decoration{display:none}}
 
 /* Keep the login as a focused card instead of a full-height right panel. */

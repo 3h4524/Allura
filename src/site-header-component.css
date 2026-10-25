@@ -2,7 +2,7 @@
 .site-brand { display: flex; align-items: center; gap: 10px; min-width: max-content; padding: 0; text-align: left; }
 .site-brand img { width: 38px; height: 38px; object-fit: contain; mix-blend-mode: multiply; }
 .site-brand span { display: grid; gap: 1px; }
-.site-brand b { color: #292522; font: 500 22px 'Playfair Display'; letter-spacing: -.03em; }
+.site-brand b { color: #292522; font: 500 22px 'Playfair Display', serif; letter-spacing: -.03em; }
 .site-brand small { color: #81766e; font-size: 8px; letter-spacing: .2em; }
 .site-header nav { display: flex; gap: 4px; margin: auto; padding: 4px; background: #eee8e2; border-radius: 30px; }
 .site-header nav button, .site-login, .site-right-action { padding: 9px 16px; border-radius: 22px; color: #766e68; font-size: 12px; white-space: nowrap; }
