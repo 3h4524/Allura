@@ -12,7 +12,7 @@ const copy = {
     memories: 'Khoảnh khắc kỷ niệm', memoriesHelp: 'Tải tối đa 3 ảnh. Ảnh sẽ xuất hiện sau voice và nhạc nền trong thiệp.', chooseImages: 'Chọn nhiều ảnh', imageCount: 'ảnh', voice: 'Lời nhắn bằng giọng nói', voiceHelp: 'Ghi âm trực tiếp hoặc upload một file âm thanh ngắn.', recording: 'Đang ghi âm...', stopRecording: 'Dừng ghi âm', addVoice: 'Thêm lời nhắn âm thanh', voiceReady: 'Đã có lời nhắn bằng giọng nói', listen: 'Nhấn để lắng nghe', record: 'Ghi âm', upload: 'Upload', voiceLimit: 'Tối đa 50MB · MP3, M4A, WAV, WebM', music: 'Nhạc nền', musicHelp: 'Chọn một bản nhạc để receiver có thể nghe cùng món quà.', musicNone: 'Không dùng nhạc nền', musicUnavailable: 'Chưa có bản nhạc nào trong thư viện',
     private: 'Nội dung được bảo mật', save: 'Lưu món quà', saved: 'Đã lưu món quà', live: 'XEM TRƯỚC TRỰC TIẾP', order: 'Lời nhắn → voice → nhạc → ảnh', brandSub: 'LIGHT UP MEMORIES, GENTLE', madeFor: 'Dành riêng cho', defaultRecipient: 'người bạn yêu thương', defaultTitle: 'Một điều dịu dàng dành cho bạn', defaultMessage: 'Mỗi khi ánh đèn này sáng lên, mong bạn nhớ rằng luôn có một người đang nghĩ về bạn.', defaultSignature: 'Thương, ...', galleryTitle: 'NHỮNG KHOẢNH KHẮC ĐÁNG NHỚ', emptyGallery: 'Thêm ảnh để tạo một câu chuyện bằng hình ảnh', fullscreen: 'Xem toàn màn hình', footer: 'A GIFT OF LIGHT · A MEMORY OF LOVE',
     imageError: 'Mỗi ảnh tối đa 5MB.',
-    loadError: 'Không thể tải món quà hiện tại.', secureError: 'Thiết bị hoặc kết nối hiện tại không hỗ trợ mã hóa an toàn. Vui lòng mở website bằng HTTPS rồi thử lại.', voiceSaveError: 'Không thể lưu lời nhắn bằng giọng nói.', saveError: 'Không thể lưu món quà. Vui lòng thử lại.', scanLamp: 'Hãy quét đúng chiếc đèn NFC bạn muốn thiết lập trước.', close: 'Đóng', micError: 'Không thể truy cập microphone. Bạn có thể upload file ghi âm thay thế.', audioError: 'Vui lòng chọn file âm thanh.', codeError: 'Mã nhận quà phải gồm đúng 6 chữ số.', noLamp: 'Tài khoản chưa có đèn active.'
+    loadError: 'Không thể tải món quà hiện tại.', secureError: 'Thiết bị hoặc kết nối hiện tại không hỗ trợ mã hóa an toàn. Vui lòng mở website bằng HTTPS rồi thử lại.', voiceSaveError: 'Không thể lưu lời nhắn bằng giọng nói.', saveError: 'Không thể lưu món quà. Vui lòng thử lại.', scanLamp: 'Hãy quét đúng chiếc đèn NFC bạn muốn thiết lập trước.', close: 'Đóng', micError: 'Không thể truy cập microphone. Bạn có thể upload file ghi âm thay thế.', audioError: 'Vui lòng chọn file âm thanh.', voiceSizeError: 'Lời nhắn âm thanh tối đa 50MB.', voiceFormatError: 'Chỉ hỗ trợ MP3, M4A, WAV hoặc WebM.', recordingUnsupported: 'Trình duyệt này chưa hỗ trợ ghi âm. Bạn có thể upload file âm thanh thay thế.', recordingEmpty: 'Không nhận được âm thanh. Vui lòng thử ghi lại.', codeError: 'Mã nhận quà phải gồm đúng 6 chữ số.', noLamp: 'Tài khoản chưa có đèn active.'
   },
   en: {
     occasions: ['Birthday', 'Anniversary', "Valentine's Day", 'Christmas', 'Other'],
@@ -21,7 +21,7 @@ const copy = {
     memories: 'Memory moments', memoriesHelp: 'Add up to 3 photos. They will appear after the voice note and music in the card.', chooseImages: 'Choose photos', imageCount: 'photos', voice: 'Voice message', voiceHelp: 'Record directly or upload a short audio file.', recording: 'Recording...', stopRecording: 'Stop recording', addVoice: 'Add a voice message', voiceReady: 'Voice message added', listen: 'Tap to listen', record: 'Record', upload: 'Upload', voiceLimit: 'Up to 50MB · MP3, M4A, WAV, WebM', music: 'Background music', musicHelp: 'Choose a track for the receiver to hear with the gift.', musicNone: 'No background music', musicUnavailable: 'No tracks are available in the library',
     private: 'Your content stays private', save: 'Save gift', saved: 'Gift saved', live: 'LIVE PREVIEW', order: 'Message → voice → music → photos', brandSub: 'LIGHT UP MEMORIES, GENTLE', madeFor: 'Made for', defaultRecipient: 'someone you love', defaultTitle: 'A gentle note for you', defaultMessage: 'Whenever this light comes on, remember that someone is always thinking of you.', defaultSignature: 'With love, ...', galleryTitle: 'MEMORY MOMENTS', emptyGallery: 'Add photos to tell a story through images', fullscreen: 'View full preview', footer: 'A GIFT OF LIGHT · A MEMORY OF LOVE',
     imageError: 'Each image must be smaller than 5MB.',
-    loadError: 'Could not load the current gift.', secureError: 'This device or connection does not support secure encryption. Please open the website over HTTPS and try again.', voiceSaveError: 'Could not save the voice message.', saveError: 'Could not save the gift. Please try again.', scanLamp: 'Scan the NFC lamp you want to set up first.', close: 'Close', micError: 'Microphone access is unavailable. You can upload an audio file instead.', audioError: 'Please choose an audio file.', codeError: 'The gift code must contain exactly 6 digits.', noLamp: 'No active lamp was found.'
+    loadError: 'Could not load the current gift.', secureError: 'This device or connection does not support secure encryption. Please open the website over HTTPS and try again.', voiceSaveError: 'Could not save the voice message.', saveError: 'Could not save the gift. Please try again.', scanLamp: 'Scan the NFC lamp you want to set up first.', close: 'Close', micError: 'Microphone access is unavailable. You can upload an audio file instead.', audioError: 'Please choose an audio file.', voiceSizeError: 'Voice messages must be 50MB or smaller.', voiceFormatError: 'Only MP3, M4A, WAV, or WebM files are supported.', recordingUnsupported: 'This browser does not support recording. You can upload an audio file instead.', recordingEmpty: 'No audio was captured. Please try recording again.', codeError: 'The gift code must contain exactly 6 digits.', noLamp: 'No active lamp was found.'
   }
 }
 
@@ -33,6 +33,43 @@ async function hashCode(value, errorMessage) {
 }
 
 const digitsOnly = value => String(value ?? '').replace(/\D/g, '').slice(0, 6)
+
+const MAX_VOICE_FILE_SIZE = 50 * 1024 * 1024
+const SUPPORTED_VOICE_TYPES = ['audio/webm', 'audio/mpeg', 'audio/mp4', 'audio/x-m4a', 'audio/wav', 'audio/x-wav']
+const RECORDING_TYPES = ['audio/webm;codecs=opus', 'audio/webm', 'audio/mp4;codecs=mp4a.40.2', 'audio/mp4']
+
+function normalizeVoiceType(type, fileName = '') {
+  const rawType = String(type || '').toLowerCase().split(';')[0]
+  if (rawType === 'audio/m4a') return 'audio/x-m4a'
+  if (SUPPORTED_VOICE_TYPES.includes(rawType)) return rawType
+  const extension = String(fileName || '').toLowerCase().split('.').pop()
+  if (extension === 'mp3') return 'audio/mpeg'
+  if (extension === 'm4a') return 'audio/x-m4a'
+  if (extension === 'mp4') return 'audio/mp4'
+  if (extension === 'wav') return 'audio/wav'
+  if (extension === 'webm') return 'audio/webm'
+  return ''
+}
+
+function supportedRecordingType() {
+  if (typeof MediaRecorder === 'undefined') return ''
+  if (typeof MediaRecorder.isTypeSupported !== 'function') return ''
+  return RECORDING_TYPES.find(type => {
+    try {
+      return MediaRecorder.isTypeSupported(type)
+    } catch {
+      return false
+    }
+  }) || ''
+}
+
+function voiceExtension(type) {
+  const normalized = normalizeVoiceType(type)
+  if (normalized === 'audio/mpeg') return 'mp3'
+  if (normalized === 'audio/mp4' || normalized === 'audio/x-m4a') return 'm4a'
+  if (normalized === 'audio/wav' || normalized === 'audio/x-wav') return 'wav'
+  return 'webm'
+}
 
 const IMAGE_POSITION_STORAGE_KEY = 'allura:gift-image-positions'
 
@@ -99,6 +136,7 @@ export default function GiftStudioGallery({ onNavigate, language = 'vi' }) {
   const [lightbox, setLightbox] = useState(false)
   const [imagePositions, setImagePositions] = useState(readImagePositions)
   const recorder = useRef(null)
+  const recordingStream = useRef(null)
   const chunks = useRef([])
   const audioRef = useRef(null)
   const musicAudioRef = useRef(null)
@@ -109,7 +147,7 @@ export default function GiftStudioGallery({ onNavigate, language = 'vi' }) {
   const currentImage = gift.imageUrls[selectedImage]
   const selectedMusic = musicTracks.find(track => String(track.id) === String(gift.musicId))
 
-  useEffect(() => () => { gift.imageUrls.forEach(url => url.startsWith('blob:') && URL.revokeObjectURL(url)); if (voiceUrl?.startsWith('blob:')) URL.revokeObjectURL(voiceUrl) }, [])
+  useEffect(() => () => { recordingStream.current?.getTracks().forEach(track => track.stop()); gift.imageUrls.forEach(url => url.startsWith('blob:') && URL.revokeObjectURL(url)); if (voiceUrl?.startsWith('blob:')) URL.revokeObjectURL(voiceUrl) }, [])
   useEffect(() => {
     let active = true
     fetch('/api/music', { cache: 'no-store' })
@@ -241,17 +279,67 @@ export default function GiftStudioGallery({ onNavigate, language = 'vi' }) {
 
   async function startRecord() {
     setError('')
+    if (globalThis.isSecureContext === false || !navigator.mediaDevices?.getUserMedia) return setError(text.secureError)
+    if (typeof MediaRecorder === 'undefined') return setError(text.recordingUnsupported)
+    let stream
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true })
-      const media = new MediaRecorder(stream); chunks.current = []
-      media.ondataavailable = event => event.data.size && chunks.current.push(event.data)
-      media.onstop = () => { stream.getTracks().forEach(track => track.stop()); const blob = new Blob(chunks.current, { type: 'audio/webm' }); setVoiceFile(blob); setVoiceUrl(URL.createObjectURL(blob)) }
-      media.start(); recorder.current = media; setRecording(true)
-    } catch { setError(text.micError) }
+      stream = await navigator.mediaDevices.getUserMedia({ audio: true })
+      const mimeType = supportedRecordingType()
+      const media = mimeType ? new MediaRecorder(stream, { mimeType }) : new MediaRecorder(stream)
+      recordingStream.current = stream
+      recorder.current = media
+      chunks.current = []
+      media.ondataavailable = event => { if (event.data?.size) chunks.current.push(event.data) }
+      media.onerror = () => setError(text.micError)
+      media.onstop = () => {
+        stream.getTracks().forEach(track => track.stop())
+        recordingStream.current = null
+        recorder.current = null
+        const actualType = normalizeVoiceType(media.mimeType || mimeType || chunks.current.find(chunk => chunk.type)?.type) || 'audio/webm'
+        const blob = new Blob(chunks.current, { type: actualType })
+        chunks.current = []
+        if (!blob.size) return setError(text.recordingEmpty)
+        const fileName = `gift-voice.${voiceExtension(actualType)}`
+        const file = typeof File === 'function' ? new File([blob], fileName, { type: actualType, lastModified: Date.now() }) : blob
+        setVoiceFile(file)
+        setVoiceUrl(current => {
+          if (current?.startsWith('blob:')) URL.revokeObjectURL(current)
+          return URL.createObjectURL(file)
+        })
+      }
+      media.start()
+      setRecording(true)
+    } catch (eventError) {
+      stream?.getTracks().forEach(track => track.stop())
+      recordingStream.current = null
+      recorder.current = null
+      setRecording(false)
+      setError(eventError?.name === 'NotSupportedError' ? text.recordingUnsupported : text.micError)
+    }
   }
 
-  function stopRecord() { recorder.current?.stop(); setRecording(false) }
-  function uploadVoice(event) { const file = event.target.files?.[0]; if (!file) return; if (!file.type.startsWith('audio/')) return setError(text.audioError); setVoiceFile(file); setVoiceUrl(URL.createObjectURL(file)); setError('') }
+  function stopRecord() {
+    const media = recorder.current
+    if (media && media.state !== 'inactive') media.stop()
+    else recordingStream.current?.getTracks().forEach(track => track.stop())
+    setRecording(false)
+  }
+
+  function uploadVoice(event) {
+    const file = event.target.files?.[0]
+    event.target.value = ''
+    if (!file) return
+    if (file.size > MAX_VOICE_FILE_SIZE) return setError(text.voiceSizeError)
+    const type = normalizeVoiceType(file.type, file.name)
+    if (!type) return setError(text.voiceFormatError)
+    const playableFile = file.type === type || typeof File !== 'function' ? file : new File([file], file.name, { type, lastModified: file.lastModified })
+    setVoiceFile(playableFile)
+    setVoiceUrl(current => {
+      if (current?.startsWith('blob:')) URL.revokeObjectURL(current)
+      return URL.createObjectURL(playableFile)
+    })
+    setError('')
+  }
   function toggleVoice() { const audio = audioRef.current; if (!audio) return; if (audio.paused) { musicAudioRef.current?.pause(); setMusicPlaying(false); audio.play().then(() => setPlaying(true)).catch(() => {}) } else { audio.pause(); setPlaying(false) } }
   function toggleMusic() { const audio = musicAudioRef.current; if (!audio) return; if (audio.paused) { audioRef.current?.pause(); setPlaying(false); audio.play().then(() => setMusicPlaying(true)).catch(() => {}) } else { audio.pause(); setMusicPlaying(false) } }
 
@@ -270,10 +358,14 @@ export default function GiftStudioGallery({ onNavigate, language = 'vi' }) {
       const lampId = lamps[0].id
       let voiceFileId = existingVoiceFileId
       if (voiceFile) {
-        const path = `${user.id}/${crypto.randomUUID()}.webm`
-        const upload = await supabase.storage.from('allura-voice').upload(path, voiceFile, { contentType: voiceFile.type || 'audio/webm', upsert: false })
+        if (voiceFile.size > MAX_VOICE_FILE_SIZE) return setError(text.voiceSizeError)
+        const voiceType = normalizeVoiceType(voiceFile.type, voiceFile.name)
+        if (!voiceType) return setError(text.voiceFormatError)
+        const extension = voiceExtension(voiceType)
+        const path = `${user.id}/${crypto.randomUUID()}.${extension}`
+        const upload = await supabase.storage.from('allura-voice').upload(path, voiceFile, { contentType: voiceType, upsert: false })
         if (upload.error) return setError(upload.error.message)
-        const row = await supabase.from('voice_files').insert({ owner_id: user.id, storage_key: path, file_name: 'gift-voice.webm', mime_type: voiceFile.type || 'audio/webm', file_size: voiceFile.size }).select('id').single()
+        const row = await supabase.from('voice_files').insert({ owner_id: user.id, storage_key: path, file_name: `gift-voice.${extension}`, mime_type: voiceType, file_size: voiceFile.size }).select('id').single()
         if (row.error || !row.data?.id) {
           await supabase.storage.from('allura-voice').remove([path])
           return setError(row.error?.message || text.voiceSaveError)
