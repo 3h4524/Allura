@@ -148,20 +148,29 @@
   }
 
   .checkout-progress {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     min-height: 0;
-    margin: 0 -2px;
-    padding: 15px 2px 12px;
-    overflow-x: auto;
+    margin: 0;
+    padding: 12px 10px;
+    overflow: visible;
+    border: 1px solid #eee4dc;
+    border-radius: 12px;
+    background: #fffaf6;
     scrollbar-width: none;
   }
 
-  .checkout-progress::-webkit-scrollbar {
+  .checkout-progress > i {
     display: none;
   }
 
   .checkout-progress > span,
   .checkout-progress > b {
+    min-width: 0;
+    justify-content: flex-start;
+    line-height: 1.35;
     font-size: 9px;
+    white-space: normal;
   }
 
   .checkout-intro {
@@ -268,7 +277,21 @@
   }
 
   .checkout-trust {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
     gap: 9px;
     padding: 4px 0 4px;
+  }
+
+  .checkout-trust span {
+    min-width: 0;
+    justify-content: flex-start;
+    white-space: nowrap;
+  }
+
+  .checkout-trust span:last-child {
+    grid-column: auto;
+    justify-content: flex-start;
   }
 }
