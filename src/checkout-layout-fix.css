@@ -100,6 +100,48 @@
     overflow-x: hidden;
   }
 
+  .checkout-grid {
+    gap: 18px;
+  }
+
+  .checkout-left {
+    display: contents;
+  }
+
+  .checkout-intro,
+  .checkout-summary,
+  .checkout-left > .checkout-card,
+  .checkout-left > .checkout-error,
+  .checkout-left > .checkout-success,
+  .checkout-left > .checkout-trust {
+    grid-column: 1;
+  }
+
+  .checkout-intro {
+    order: 1;
+  }
+
+  .checkout-summary {
+    order: 2;
+  }
+
+  .checkout-left > .checkout-card {
+    order: 3;
+  }
+
+  .checkout-left > .contact-card {
+    order: 4;
+  }
+
+  .checkout-left > .checkout-error,
+  .checkout-left > .checkout-success {
+    order: 5;
+  }
+
+  .checkout-left > .checkout-trust {
+    order: 6;
+  }
+
   .checkout-main.container {
     width: 100%;
     padding: 0 14px 34px;
@@ -181,10 +223,6 @@
 
   .checkout-card hr {
     margin: 20px 0;
-  }
-
-  .checkout-summary {
-    order: -1;
   }
 
   .summary-title {
