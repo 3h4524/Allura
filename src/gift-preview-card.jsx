@@ -8,7 +8,7 @@ const text = {
     defaultRecipient: 'người bạn yêu thương',
     defaultTitle: 'Một điều dịu dàng dành cho bạn',
     defaultMessage: 'Mỗi khi ánh đèn này sáng lên, mong bạn nhớ rằng luôn có một người đang nghĩ về bạn.',
-    defaultSignature: 'Thương, ...',
+    defaultSignature: 'Thương, ...', defaultOccasion: '\u004b\u1ef6\u0020\u004e\u0049\u1ec6\u004d',
     voice: 'Lời nhắn bằng giọng nói',
     listen: 'Nhấn để lắng nghe',
     music: 'Nhạc nền',
@@ -32,7 +32,7 @@ const text = {
     defaultRecipient: 'someone you love',
     defaultTitle: 'A gentle note for you',
     defaultMessage: 'Whenever this light comes on, remember that someone is always thinking of you.',
-    defaultSignature: 'With love, ...',
+    defaultSignature: 'With love, ...', defaultOccasion: 'MEMORY',
     voice: 'Voice message',
     listen: 'Tap to listen',
     music: 'Background music',
@@ -126,7 +126,7 @@ export default function GiftPreviewCard({
         <button type="button" className="gallery-nav prev" onClick={() => moveImage(-1)} disabled={!images.length} aria-label={copy.previous}><ChevronLeft size={16} /></button>
         <button type="button" className="gallery-nav next" onClick={() => moveImage(1)} disabled={!images.length} aria-label={copy.next}><ChevronRight size={16} /></button>
       </div>
-      <div className="gift-preview-occasion">{gift.occasion || 'KỶ NIỆM'}</div>
+      <div className="gift-preview-occasion">{gift.occasion || copy.defaultOccasion}</div>
       <h2>{gift.title || copy.defaultTitle}</h2>
       <div className="gift-preview-to">{copy.madeFor} {gift.receiverName || copy.defaultRecipient}</div>
       <blockquote>“{previewMessage}”</blockquote>

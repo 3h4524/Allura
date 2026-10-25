@@ -11,7 +11,8 @@ const copy = {
     recipient: 'Người nhận', recipientPlaceholder: 'Tên người nhận', code: 'Mã nhận quà', codePlaceholder: 'Mã 6 số seller gửi', occasion: 'Dịp trao gửi', messageTitle: 'Tiêu đề lời nhắn', messageTitlePlaceholder: 'Một điều dịu dàng dành cho bạn', message: 'Lời nhắn yêu thương', messagePlaceholder: 'Viết điều bạn muốn nói...', signature: 'Chữ ký người gửi', signaturePlaceholder: 'Thương, ...',
     memories: 'Khoảnh khắc kỷ niệm', memoriesHelp: 'Tải tối đa 3 ảnh. Ảnh sẽ xuất hiện sau voice và nhạc nền trong thiệp.', chooseImages: 'Chọn nhiều ảnh', imageCount: 'ảnh', voice: 'Lời nhắn bằng giọng nói', voiceHelp: 'Ghi âm trực tiếp hoặc upload một file âm thanh ngắn.', recording: 'Đang ghi âm...', stopRecording: 'Dừng ghi âm', addVoice: 'Thêm lời nhắn âm thanh', voiceReady: 'Đã có lời nhắn bằng giọng nói', listen: 'Nhấn để lắng nghe', record: 'Ghi âm', upload: 'Upload', voiceLimit: 'Tối đa 50MB · MP3, M4A, WAV, WebM', music: 'Nhạc nền', musicHelp: 'Chọn một bản nhạc để receiver có thể nghe cùng món quà.', musicNone: 'Không dùng nhạc nền', musicUnavailable: 'Chưa có bản nhạc nào trong thư viện',
     private: 'Nội dung được bảo mật', save: 'Lưu món quà', saved: 'Đã lưu món quà', live: 'XEM TRƯỚC TRỰC TIẾP', order: 'Lời nhắn → voice → nhạc → ảnh', brandSub: 'LIGHT UP MEMORIES, GENTLE', madeFor: 'Dành riêng cho', defaultRecipient: 'người bạn yêu thương', defaultTitle: 'Một điều dịu dàng dành cho bạn', defaultMessage: 'Mỗi khi ánh đèn này sáng lên, mong bạn nhớ rằng luôn có một người đang nghĩ về bạn.', defaultSignature: 'Thương, ...', galleryTitle: 'NHỮNG KHOẢNH KHẮC ĐÁNG NHỚ', emptyGallery: 'Thêm ảnh để tạo một câu chuyện bằng hình ảnh', fullscreen: 'Xem toàn màn hình', footer: 'A GIFT OF LIGHT · A MEMORY OF LOVE',
-    imageError: 'Mỗi ảnh tối đa 5MB.', micError: 'Không thể truy cập microphone. Bạn có thể upload file ghi âm thay thế.', audioError: 'Vui lòng chọn file âm thanh.', codeError: 'Mã nhận quà phải gồm đúng 6 chữ số.', noLamp: 'Tài khoản chưa có đèn active.'
+    imageError: 'Mỗi ảnh tối đa 5MB.',
+    loadError: 'Không thể tải món quà hiện tại.', secureError: 'Thiết bị hoặc kết nối hiện tại không hỗ trợ mã hóa an toàn. Vui lòng mở website bằng HTTPS rồi thử lại.', voiceSaveError: 'Không thể lưu lời nhắn bằng giọng nói.', saveError: 'Không thể lưu món quà. Vui lòng thử lại.', scanLamp: 'Hãy quét đúng chiếc đèn NFC bạn muốn thiết lập trước.', close: 'Đóng', micError: 'Không thể truy cập microphone. Bạn có thể upload file ghi âm thay thế.', audioError: 'Vui lòng chọn file âm thanh.', codeError: 'Mã nhận quà phải gồm đúng 6 chữ số.', noLamp: 'Tài khoản chưa có đèn active.'
   },
   en: {
     occasions: ['Birthday', 'Anniversary', "Valentine's Day", 'Christmas', 'Other'],
@@ -19,13 +20,14 @@ const copy = {
     recipient: 'Recipient', recipientPlaceholder: 'Recipient name', code: 'Gift code', codePlaceholder: '6-digit seller code', occasion: 'Occasion', messageTitle: 'Message title', messageTitlePlaceholder: 'A gentle note for you', message: 'Your message', messagePlaceholder: 'Write what you want to say...', signature: 'Your signature', signaturePlaceholder: 'With love, ...',
     memories: 'Memory moments', memoriesHelp: 'Add up to 3 photos. They will appear after the voice note and music in the card.', chooseImages: 'Choose photos', imageCount: 'photos', voice: 'Voice message', voiceHelp: 'Record directly or upload a short audio file.', recording: 'Recording...', stopRecording: 'Stop recording', addVoice: 'Add a voice message', voiceReady: 'Voice message added', listen: 'Tap to listen', record: 'Record', upload: 'Upload', voiceLimit: 'Up to 50MB · MP3, M4A, WAV, WebM', music: 'Background music', musicHelp: 'Choose a track for the receiver to hear with the gift.', musicNone: 'No background music', musicUnavailable: 'No tracks are available in the library',
     private: 'Your content stays private', save: 'Save gift', saved: 'Gift saved', live: 'LIVE PREVIEW', order: 'Message → voice → music → photos', brandSub: 'LIGHT UP MEMORIES, GENTLE', madeFor: 'Made for', defaultRecipient: 'someone you love', defaultTitle: 'A gentle note for you', defaultMessage: 'Whenever this light comes on, remember that someone is always thinking of you.', defaultSignature: 'With love, ...', galleryTitle: 'MEMORY MOMENTS', emptyGallery: 'Add photos to tell a story through images', fullscreen: 'View full preview', footer: 'A GIFT OF LIGHT · A MEMORY OF LOVE',
-    imageError: 'Each image must be smaller than 5MB.', micError: 'Microphone access is unavailable. You can upload an audio file instead.', audioError: 'Please choose an audio file.', codeError: 'The gift code must contain exactly 6 digits.', noLamp: 'No active lamp was found.'
+    imageError: 'Each image must be smaller than 5MB.',
+    loadError: 'Could not load the current gift.', secureError: 'This device or connection does not support secure encryption. Please open the website over HTTPS and try again.', voiceSaveError: 'Could not save the voice message.', saveError: 'Could not save the gift. Please try again.', scanLamp: 'Scan the NFC lamp you want to set up first.', close: 'Close', micError: 'Microphone access is unavailable. You can upload an audio file instead.', audioError: 'Please choose an audio file.', codeError: 'The gift code must contain exactly 6 digits.', noLamp: 'No active lamp was found.'
   }
 }
 
-async function hashCode(value) {
+async function hashCode(value, errorMessage) {
   const bytes = new TextEncoder().encode(value.trim())
-  if (!globalThis.crypto?.subtle) throw new Error('Thiết bị hoặc kết nối hiện tại không hỗ trợ mã hóa an toàn. Vui lòng mở website bằng HTTPS rồi thử lại.')
+  if (!globalThis.crypto?.subtle) throw new Error(errorMessage)
   const digest = await crypto.subtle.digest('SHA-256', bytes)
   return [...new Uint8Array(digest)].map(byte => byte.toString(16).padStart(2, '0')).join('')
 }
@@ -71,7 +73,7 @@ function MusicDropdown({ tracks, value, onChange, disabled, noneLabel }) {
     <button type="button" className="music-dropdown-trigger" disabled={disabled} aria-haspopup="listbox" aria-expanded={open} onClick={() => setOpen(current => !current)}>
       <span>{selectedLabel}</span><ChevronDown size={17}/>
     </button>
-    {open && <div className="music-dropdown-menu" role="listbox" aria-label="Chọn nhạc nền">
+    {open && <div className="music-dropdown-menu" role="listbox" aria-label={text.music}>
       <button type="button" role="option" aria-selected={!value} className={!value ? 'selected' : ''} onClick={() => { onChange(''); setOpen(false) }}>{noneLabel}</button>
       {tracks.map(track => <button type="button" role="option" aria-selected={String(track.id) === String(value)} className={String(track.id) === String(value) ? 'selected' : ''} key={track.id} onClick={() => { onChange(track.id); setOpen(false) }}>{track.title} · {track.artist}</button>)}
     </div>}
@@ -128,7 +130,7 @@ export default function GiftStudioGallery({ onNavigate, language = 'vi' }) {
         if (!accessToken) return
         const response = await fetch(`/api/gifts/${encodeURIComponent(lampId)}`, { headers: { Authorization: `Bearer ${accessToken}` } })
         const data = await response.json().catch(() => ({}))
-        if (!response.ok) throw new Error(data.message || 'Không thể tải món quà hiện tại.')
+        if (!response.ok) throw new Error(data.message || text.loadError)
         if (!active || !data.gift) return
         const saved = data.gift
         const imageUrls = Array.isArray(saved.imageUrls) ? saved.imageUrls.filter(Boolean) : saved.imageUrl ? [saved.imageUrl] : []
@@ -152,7 +154,7 @@ export default function GiftStudioGallery({ onNavigate, language = 'vi' }) {
           return next
         })
       } catch (eventError) {
-        if (active) setError(eventError.message || 'Không thể tải món quà hiện tại.')
+        if (active) setError(eventError.message || text.loadError)
       } finally {
         if (active) setLoadingGift(false)
       }
@@ -264,7 +266,7 @@ export default function GiftStudioGallery({ onNavigate, language = 'vi' }) {
       if (setupLampId) lampQuery = lampQuery.eq('id', setupLampId)
       const { data: lamps } = await lampQuery.limit(setupLampId ? 1 : 2)
       if (!lamps?.length) return setError(text.noLamp)
-      if (!setupLampId && lamps.length > 1) return setError(language === 'en' ? 'Scan the NFC lamp you want to set up first.' : 'Hãy quét đúng chiếc đèn NFC bạn muốn thiết lập trước.')
+      if (!setupLampId && lamps.length > 1) return setError(text.scanLamp)
       const lampId = lamps[0].id
       let voiceFileId = existingVoiceFileId
       if (voiceFile) {
@@ -274,13 +276,13 @@ export default function GiftStudioGallery({ onNavigate, language = 'vi' }) {
         const row = await supabase.from('voice_files').insert({ owner_id: user.id, storage_key: path, file_name: 'gift-voice.webm', mime_type: voiceFile.type || 'audio/webm', file_size: voiceFile.size }).select('id').single()
         if (row.error || !row.data?.id) {
           await supabase.storage.from('allura-voice').remove([path])
-          return setError(row.error?.message || 'Không thể lưu lời nhắn bằng giọng nói.')
+          return setError(row.error?.message || text.voiceSaveError)
         }
         voiceFileId = row.data.id
       }
       const savedImagePositions = Object.fromEntries(gift.imageUrls.map(url => [url, imagePositions[url] || { x: 50, y: 50 }]))
       const payload = { lamp_id: lampId, receiver_name: gift.receiverName, receiver_email: null, occasion: gift.occasion, title: gift.title, message: gift.message, signature: gift.signature, image_url: gift.imageUrls[0] || null, image_urls: gift.imageUrls, image_positions: savedImagePositions, voice_file_id: voiceFileId || null, music_id: gift.musicId || null, status: 'ready' }
-      if (receiverCode) payload.receiver_code_hash = await hashCode(receiverCode)
+      if (receiverCode) payload.receiver_code_hash = await hashCode(receiverCode, text.secureError)
       const persistGift = values => existingGiftId
         ? supabase.from('gift_contents').update(values).eq('id', existingGiftId)
         : supabase.from('gift_contents').upsert(values, { onConflict: 'lamp_id' })
@@ -302,7 +304,7 @@ export default function GiftStudioGallery({ onNavigate, language = 'vi' }) {
         else setSaved(true)
       }
     } catch (eventError) {
-      setError(eventError?.message || 'Không thể lưu món quà. Vui lòng thử lại.')
+      setError(eventError?.message || text.saveError)
     }
   }
 
@@ -323,6 +325,6 @@ export default function GiftStudioGallery({ onNavigate, language = 'vi' }) {
         <div className="music-select-studio"><div className="voice-studio-heading"><div className="studio-label"><b>9.</b> {text.music} <Music2 size={16} /></div><p>{text.musicHelp}</p></div><MusicDropdown tracks={musicTracks} value={gift.musicId || ''} onChange={value => setGift(current => ({ ...current, musicId: value }))} disabled={!musicTracks.length} noneLabel={musicTracks.length ? text.musicNone : text.musicUnavailable} />{selectedMusic?.audio && <audio ref={musicAudioRef} controls src={selectedMusic.audio} style={{ width: '100%', marginTop: 12 }} onEnded={() => setMusicPlaying(false)} />}</div>
       </div>{error && <div className="error">{error}</div>}<div className="studio-actions"><span><LockKeyhole size={14} /> {text.private}</span><button className="primary" disabled={imageBusy || loadingGift}>{saved ? text.saved : existingGiftId ? (language === 'en' ? 'Save changes' : 'Lưu thay đổi') : text.save} <ArrowRight size={17} /></button></div></form>
       <aside className="device-preview gallery-device-preview"><div className="preview-heading"><div><i className="live-dot" /> {text.live}</div><small>{text.order}</small></div><GiftPreviewCard gift={gift} language={language} voiceUrl={voiceUrl} playing={playing} onToggleVoice={toggleVoice} musicUrl={selectedMusic?.audio || ''} musicTitle={selectedMusic?.title} musicArtist={selectedMusic?.artist} musicPlaying={musicPlaying} onToggleMusic={toggleMusic} selectedImage={selectedImage} onSelectImage={setSelectedImage} onOpenImage={() => setLightbox(true)} imagePositions={imagePositions} /><button type="button" className="preview-full"><Sparkles className="preview-full-open-icon" size={13} /><X className="preview-full-close-icon" size={18} aria-hidden="true" /> <span>{text.fullscreen}</span></button></aside>
-    </div>{lightbox && currentImage && <div className="gift-lightbox" role="dialog" aria-modal="true" onClick={() => setLightbox(false)}><button type="button" onClick={() => setLightbox(false)} aria-label="Close"><X size={20} /></button><img src={currentImage} alt={`${text.memories} enlarged`} onClick={event => event.stopPropagation()} /></div>}
+    </div>{lightbox && currentImage && <div className="gift-lightbox" role="dialog" aria-modal="true" onClick={() => setLightbox(false)}><button type="button" onClick={() => setLightbox(false)} aria-label={text.close}><X size={20} /></button><img src={currentImage} alt={`${text.memories} enlarged`} onClick={event => event.stopPropagation()} /></div>}
   </section>
 }

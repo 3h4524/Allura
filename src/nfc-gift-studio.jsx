@@ -35,9 +35,29 @@ export default function NfcGiftStudio({ onNavigate }) {
     setWarning(true)
   }
 
+  const warningCopy = language === 'en'
+    ? {
+        close: 'Close',
+        title: 'Experimental feature',
+        loginText: 'You are exploring Allura’s test experience. Sign in to continue shopping and setting up your gift.',
+        setupText: 'You are exploring Allura’s test experience. Purchase a product and complete gift setup to unlock the full experience.',
+        loginAction: 'Sign in',
+        setupAction: 'Shop & set up',
+        later: 'Maybe later',
+      }
+    : {
+        close: 'Đóng',
+        title: 'Tính năng đang thử nghiệm',
+        loginText: 'Bạn đang trải nghiệm bản thử nghiệm của Allura. Hãy đăng nhập để tiếp tục mua sản phẩm và setup món quà.',
+        setupText: 'Bạn đang trải nghiệm bản thử nghiệm của Allura. Để sử dụng đầy đủ, hãy mua sản phẩm và hoàn tất setup món quà trước nhé.',
+        loginAction: 'Đăng nhập',
+        setupAction: 'Mua sản phẩm & setup',
+        later: 'Để sau',
+      }
+
   return <div className="nfc-gift-shell" onClick={interceptSave}>
     <GiftStudioGallery key={language} onNavigate={onNavigate} language={language} />
-    {warning && <div className="nfc-warning-overlay" role="dialog" aria-modal="true" aria-labelledby="nfc-warning-title"><div className="nfc-warning-modal"><button className="nfc-warning-close" onClick={() => setWarning(false)} aria-label="Đóng"><X size={18} /></button><div className="nfc-gate-icon"><LockKeyhole size={27} /></div><h2 id="nfc-warning-title">Tính năng đang thử nghiệm</h2><p>{status === 'login' ? 'Bạn đang trải nghiệm bản thử nghiệm của Allura. Hãy đăng nhập để tiếp tục mua sản phẩm và setup món quà.' : 'Bạn đang trải nghiệm bản thử nghiệm của Allura. Để sử dụng đầy đủ, hãy mua sản phẩm và hoàn tất setup món quà trước nhé.'}</p><button className="primary" onClick={() => onNavigate(status === 'login' ? '/dang-nhap' : '/san-pham')}>{status === 'login' ? 'Đăng nhập' : 'Mua sản phẩm & setup'} <ArrowRight size={16} /></button><button className="nfc-warning-later" onClick={() => setWarning(false)}>Để sau</button></div></div>}
+    {warning && <div className="nfc-warning-overlay" role="dialog" aria-modal="true" aria-labelledby="nfc-warning-title"><div className="nfc-warning-modal"><button className="nfc-warning-close" onClick={() => setWarning(false)} aria-label={warningCopy.close}><X size={18} /></button><div className="nfc-gate-icon"><LockKeyhole size={27} /></div><h2 id="nfc-warning-title">{warningCopy.title}</h2><p>{status === 'login' ? warningCopy.loginText : warningCopy.setupText}</p><button className="primary" onClick={() => onNavigate(status === 'login' ? '/dang-nhap' : '/san-pham')}>{status === 'login' ? warningCopy.loginAction : warningCopy.setupAction} <ArrowRight size={16} /></button><button className="nfc-warning-later" onClick={() => setWarning(false)}>{warningCopy.later}</button></div></div>}
   </div>
 }
 
