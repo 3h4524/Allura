@@ -25,9 +25,12 @@ const copy = {
 
 async function hashCode(value) {
   const bytes = new TextEncoder().encode(value.trim())
+  if (!globalThis.crypto?.subtle) throw new Error('Thiết bị hoặc kết nối hiện tại không hỗ trợ mã hóa an toàn. Vui lòng mở website bằng HTTPS rồi thử lại.')
   const digest = await crypto.subtle.digest('SHA-256', bytes)
   return [...new Uint8Array(digest)].map(byte => byte.toString(16).padStart(2, '0')).join('')
 }
+
+const digitsOnly = value => String(value ?? '').replace(/\D/g, '').slice(0, 6)
 
 const IMAGE_POSITION_STORAGE_KEY = 'allura:gift-image-positions'
 
@@ -99,6 +102,7 @@ export default function GiftStudioGallery({ onNavigate, language = 'vi' }) {
   const musicAudioRef = useRef(null)
 
   const change = event => setGift(current => ({ ...current, [event.target.name]: event.target.value }))
+  const changeReceiverCode = event => setGift(current => ({ ...current, receiverCode: digitsOnly(event.target?.value) }))
   const previewMessage = gift.message || text.defaultMessage
   const currentImage = gift.imageUrls[selectedImage]
   const selectedMusic = musicTracks.find(track => String(track.id) === String(gift.musicId))
@@ -251,50 +255,54 @@ export default function GiftStudioGallery({ onNavigate, language = 'vi' }) {
 
   async function save(event) {
     event.preventDefault(); setError(''); setSaved(false)
-    const receiverCode = gift.receiverCode.trim()
-    if ((!existingGiftId || receiverCode) && !/^\d{6}$/.test(receiverCode)) return setError(text.codeError)
-    const user = await currentUser(); if (!user || !supabase) return onNavigate('/dang-nhap')
-    const setupLampId = typeof window !== 'undefined' ? window.sessionStorage.getItem('allura:setup-lamp-id') : ''
-    let lampQuery = supabase.from('lamps').select('id').eq('owner_id', user.id).in('status', ['inactive', 'active'])
-    if (setupLampId) lampQuery = lampQuery.eq('id', setupLampId)
-    const { data: lamps } = await lampQuery.limit(setupLampId ? 1 : 2)
-    if (!lamps?.length) return setError(text.noLamp)
-    if (!setupLampId && lamps.length > 1) return setError(language === 'en' ? 'Scan the NFC lamp you want to set up first.' : 'Hãy quét đúng chiếc đèn NFC bạn muốn thiết lập trước.')
-    const lampId = lamps[0].id
-    let voiceFileId = existingVoiceFileId
-    if (voiceFile) {
-      const path = `${user.id}/${crypto.randomUUID()}.webm`
-      const upload = await supabase.storage.from('allura-voice').upload(path, voiceFile, { contentType: voiceFile.type || 'audio/webm', upsert: false })
-      if (upload.error) return setError(upload.error.message)
-      const row = await supabase.from('voice_files').insert({ owner_id: user.id, storage_key: path, file_name: 'gift-voice.webm', mime_type: voiceFile.type || 'audio/webm', file_size: voiceFile.size }).select('id').single()
-      if (row.error || !row.data?.id) {
-        await supabase.storage.from('allura-voice').remove([path])
-        return setError(row.error?.message || 'Không thể lưu lời nhắn bằng giọng nói.')
+    try {
+      const receiverCode = digitsOnly(gift.receiverCode)
+      if ((!existingGiftId || receiverCode) && !/^\d{6}$/.test(receiverCode)) return setError(text.codeError)
+      const user = await currentUser(); if (!user || !supabase) return onNavigate('/dang-nhap')
+      const setupLampId = typeof window !== 'undefined' ? window.sessionStorage.getItem('allura:setup-lamp-id') : ''
+      let lampQuery = supabase.from('lamps').select('id').eq('owner_id', user.id).in('status', ['inactive', 'active'])
+      if (setupLampId) lampQuery = lampQuery.eq('id', setupLampId)
+      const { data: lamps } = await lampQuery.limit(setupLampId ? 1 : 2)
+      if (!lamps?.length) return setError(text.noLamp)
+      if (!setupLampId && lamps.length > 1) return setError(language === 'en' ? 'Scan the NFC lamp you want to set up first.' : 'Hãy quét đúng chiếc đèn NFC bạn muốn thiết lập trước.')
+      const lampId = lamps[0].id
+      let voiceFileId = existingVoiceFileId
+      if (voiceFile) {
+        const path = `${user.id}/${crypto.randomUUID()}.webm`
+        const upload = await supabase.storage.from('allura-voice').upload(path, voiceFile, { contentType: voiceFile.type || 'audio/webm', upsert: false })
+        if (upload.error) return setError(upload.error.message)
+        const row = await supabase.from('voice_files').insert({ owner_id: user.id, storage_key: path, file_name: 'gift-voice.webm', mime_type: voiceFile.type || 'audio/webm', file_size: voiceFile.size }).select('id').single()
+        if (row.error || !row.data?.id) {
+          await supabase.storage.from('allura-voice').remove([path])
+          return setError(row.error?.message || 'Không thể lưu lời nhắn bằng giọng nói.')
+        }
+        voiceFileId = row.data.id
       }
-      voiceFileId = row.data.id
-    }
-    const savedImagePositions = Object.fromEntries(gift.imageUrls.map(url => [url, imagePositions[url] || { x: 50, y: 50 }]))
-    const payload = { lamp_id: lampId, receiver_name: gift.receiverName, receiver_email: null, occasion: gift.occasion, title: gift.title, message: gift.message, signature: gift.signature, image_url: gift.imageUrls[0] || null, image_urls: gift.imageUrls, image_positions: savedImagePositions, voice_file_id: voiceFileId || null, music_id: gift.musicId || null, status: 'ready' }
-    if (receiverCode) payload.receiver_code_hash = await hashCode(receiverCode)
-    const persistGift = values => existingGiftId
-      ? supabase.from('gift_contents').update(values).eq('id', existingGiftId)
-      : supabase.from('gift_contents').upsert(values, { onConflict: 'lamp_id' })
-    let result = await persistGift(payload)
-    if (result.error && /image_positions|schema cache/i.test(result.error.message || '')) {
-      const { image_positions: _imagePositions, ...legacyPayload } = payload
-      result = await persistGift(legacyPayload)
-    }
-    if (result.error && /music_id|schema cache/i.test(result.error.message || '')) {
-      if (gift.musicId) return setError(language === 'en' ? 'Run migration 017_gift_music.sql before saving background music.' : 'Hãy chạy migration 017_gift_music.sql trước khi lưu nhạc nền.')
-      const { music_id: _musicId, ...legacyPayload } = payload
-      result = await persistGift(legacyPayload)
-    }
-    if (result.error) {
-      setError(result.error.message)
-    } else {
-      const activation = await supabase.from('lamps').update({ status: 'active', activated_at: new Date().toISOString() }).eq('id', lampId).eq('owner_id', user.id)
-      if (activation.error) setError(activation.error.message)
-      else setSaved(true)
+      const savedImagePositions = Object.fromEntries(gift.imageUrls.map(url => [url, imagePositions[url] || { x: 50, y: 50 }]))
+      const payload = { lamp_id: lampId, receiver_name: gift.receiverName, receiver_email: null, occasion: gift.occasion, title: gift.title, message: gift.message, signature: gift.signature, image_url: gift.imageUrls[0] || null, image_urls: gift.imageUrls, image_positions: savedImagePositions, voice_file_id: voiceFileId || null, music_id: gift.musicId || null, status: 'ready' }
+      if (receiverCode) payload.receiver_code_hash = await hashCode(receiverCode)
+      const persistGift = values => existingGiftId
+        ? supabase.from('gift_contents').update(values).eq('id', existingGiftId)
+        : supabase.from('gift_contents').upsert(values, { onConflict: 'lamp_id' })
+      let result = await persistGift(payload)
+      if (result.error && /image_positions|schema cache/i.test(result.error.message || '')) {
+        const { image_positions: _imagePositions, ...legacyPayload } = payload
+        result = await persistGift(legacyPayload)
+      }
+      if (result.error && /music_id|schema cache/i.test(result.error.message || '')) {
+        if (gift.musicId) return setError(language === 'en' ? 'Run migration 017_gift_music.sql before saving background music.' : 'Hãy chạy migration 017_gift_music.sql trước khi lưu nhạc nền.')
+        const { music_id: _musicId, ...legacyPayload } = payload
+        result = await persistGift(legacyPayload)
+      }
+      if (result.error) {
+        setError(result.error.message)
+      } else {
+        const activation = await supabase.from('lamps').update({ status: 'active', activated_at: new Date().toISOString() }).eq('id', lampId).eq('owner_id', user.id)
+        if (activation.error) setError(activation.error.message)
+        else setSaved(true)
+      }
+    } catch (eventError) {
+      setError(eventError?.message || 'Không thể lưu món quà. Vui lòng thử lại.')
     }
   }
 
@@ -306,7 +314,7 @@ export default function GiftStudioGallery({ onNavigate, language = 'vi' }) {
     <div className="studio-layout container">
       <form className="studio-form" onSubmit={save}><div className="studio-block">
         <div className="studio-label"><b>1.</b> {text.recipient} <UserRound size={16} /></div><input name="receiverName" value={gift.receiverName} onChange={change} placeholder={text.recipientPlaceholder} required />
-        <div className="studio-label"><b>2.</b> {text.code} <LockKeyhole size={16} /></div><input type="text" name="receiverCode" value={gift.receiverCode} onChange={event => setGift(current => ({ ...current, receiverCode: event.currentTarget.value.replace(/\D/g, '').slice(0, 6) }))} inputMode="numeric" pattern="[0-9]*" autoComplete="one-time-code" maxLength="6" placeholder={existingGiftId ? (language === 'en' ? 'Leave blank to keep current code' : 'Để trống để giữ mã hiện tại') : text.codePlaceholder} required={!existingGiftId} />
+        <div className="studio-label"><b>2.</b> {text.code} <LockKeyhole size={16} /></div><input type="tel" name="receiverCode" value={gift.receiverCode} onChange={changeReceiverCode} inputMode="numeric" autoComplete="one-time-code" maxLength="6" placeholder={existingGiftId ? (language === 'en' ? 'Leave blank to keep current code' : 'Để trống để giữ mã hiện tại') : text.codePlaceholder} required={!existingGiftId} />
         <div className="studio-label"><b>3.</b> {text.occasion} <Sparkles size={16} /></div><div className="occasion-pills">{text.occasions.map(item => <button type="button" className={gift.occasion === item ? 'selected' : ''} key={item} onClick={() => setGift({ ...gift, occasion: item })}>{item}</button>)}</div>
         <div className="studio-label"><b>4.</b> {text.messageTitle}</div><input name="title" value={gift.title} onChange={change} placeholder={text.messageTitlePlaceholder} required />
         <div className="studio-label"><b>5.</b> {text.message} <span>{gift.message.length}/500</span></div><textarea name="message" maxLength="500" value={gift.message} onChange={change} rows="6" placeholder={text.messagePlaceholder} required />

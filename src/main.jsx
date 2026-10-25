@@ -65,6 +65,7 @@ import { useLanguage } from './language.jsx'
 
 const API = '/api'
 const demoGift = { receiverName: '', receiverEmail: '', occasion: 'Sinh nhật', title: '', message: '', signature: '', imageUrl: '' }
+const digitsOnly = value => String(value ?? '').replace(/\D/g, '').slice(0, 6)
 
 function navigateTo(to, setPage) { window.history.pushState({}, '', to); setPage(to); window.scrollTo(0, 0) }
 
@@ -360,7 +361,7 @@ function ReceiverCodeFlow({ token, onNavigate }) {
       if (!response.ok) throw Error(data.message)
       setGift({ ...data.gift, imageUrl: data.gift.imageUrl || data.gift.image_url })
     } catch (eventError) {
-      setError(eventError.message)
+      setError(eventError?.message || 'Không thể mở món quà. Vui lòng thử lại.')
     }
   }
 
@@ -380,7 +381,7 @@ function ReceiverCodeFlow({ token, onNavigate }) {
         <h1>Một món quà<br/><em>đang chờ bạn.</em></h1>
         <p>Quét NFC thành công. Nhập mã 6 số được seller gửi để mở thiệp.</p>
         <form onSubmit={verify}>
-          <label>Mã nhận quà<input type="text" name="code" inputMode="numeric" pattern="[0-9]*" maxLength="6" value={code} onChange={event => setCode(event.currentTarget.value.replace(/\D/g, '').slice(0, 6))} placeholder="000000" autoComplete="one-time-code" autoFocus required/></label>
+          <label>Mã nhận quà<input type="tel" name="code" inputMode="numeric" maxLength="6" value={code} onChange={event => setCode(digitsOnly(event.target?.value))} placeholder="000000" autoComplete="one-time-code" autoFocus required/></label>
           {error && <div className="error">{error}</div>}
           <button className="primary full">Mở món quà <ArrowRight size={17}/></button>
         </form>
