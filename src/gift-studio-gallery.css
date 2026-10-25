@@ -352,3 +352,119 @@ body.gift-preview-modal-open:before{display:none}body.gift-preview-modal-open{ov
     flex: none;
   }
 }
+
+@media (max-width: 580px) {
+  .gallery-studio-page .studio-form,
+  .gallery-studio-page .studio-form > *,
+  .gallery-studio-page .studio-block,
+  .gallery-studio-page .gallery-upload,
+  .gallery-studio-page .voice-studio,
+  .gallery-studio-page .music-select-studio,
+  .gallery-studio-page .music-dropdown {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .gallery-studio-page .studio-form input:not([type='file']),
+  .gallery-studio-page .studio-form textarea {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .gallery-studio-page .studio-label {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .gallery-studio-page .studio-label span {
+    min-width: 0;
+    max-width: 48%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .gallery-studio-page .gallery-upload-actions {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .gallery-studio-page .gallery-upload-actions .upload-label {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .gallery-studio-page .gallery-upload-actions small {
+    align-self: flex-start;
+  }
+
+  .gallery-studio-page .gallery-upload-thumbs {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .gallery-studio-page .gallery-upload-thumbs button {
+    flex: 0 0 50px;
+  }
+
+  .gallery-studio-page .record-row {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .gallery-studio-page .record-row > div:nth-child(2),
+  .gallery-studio-page .record-row b,
+  .gallery-studio-page .record-row small {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .gallery-studio-page .record-row .voice-recorder-actions {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    flex-wrap: wrap;
+  }
+
+  .gallery-studio-page .record-row .voice-recorder-actions .outline {
+    max-width: 100%;
+    min-width: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .gallery-studio-page .music-dropdown,
+  .gallery-studio-page .music-dropdown-trigger,
+  .gallery-studio-page .music-dropdown-menu {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .gallery-studio-page .music-dropdown-menu button {
+    min-width: 0;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .gallery-studio-page .voice-studio audio,
+  .gallery-studio-page .music-select-studio audio {
+    display: block;
+    width: 100% !important;
+    max-width: 100%;
+  }
+}
