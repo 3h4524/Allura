@@ -75,6 +75,14 @@
   display: none;
 }
 
+.checkout-page .checkout-intro p {
+  font-size: 13px;
+}
+
+.checkout-page .checkout-intro p::after {
+  content: none;
+}
+
 @media (max-width: 950px) {
   .checkout-progress {
     overflow-x: auto;
@@ -86,5 +94,143 @@
   .checkout-progress {
     min-height: 58px;
     gap: 7px;
+  }
+
+  .checkout-page {
+    overflow-x: hidden;
+  }
+
+  .checkout-main.container {
+    width: 100%;
+    padding: 0 14px 34px;
+  }
+
+  .checkout-progress {
+    min-height: 0;
+    margin: 0 -2px;
+    padding: 15px 2px 12px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .checkout-progress::-webkit-scrollbar {
+    display: none;
+  }
+
+  .checkout-progress > span,
+  .checkout-progress > b {
+    font-size: 9px;
+  }
+
+  .checkout-intro {
+    padding: 16px 3px 6px;
+  }
+
+  .checkout-intro h1 {
+    font-size: clamp(32px, 10vw, 40px);
+    line-height: 1.08;
+  }
+
+  .checkout-page .checkout-intro p {
+    max-width: none;
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  .checkout-page .checkout-intro p::after {
+    content: none;
+  }
+
+  .checkout-card,
+  .checkout-summary {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .checkout-section-title {
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+
+  .checkout-section-title h2 {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  .checkout-section-title h2 small {
+    font-size: 9px;
+    line-height: 1.4;
+  }
+
+  .form-grid {
+    gap: 11px;
+  }
+
+  .form-grid input,
+  .form-grid select,
+  .checkout-page textarea {
+    min-width: 0;
+    min-height: 44px;
+    font-size: 16px;
+  }
+
+  .checkout-page textarea {
+    min-height: 96px;
+  }
+
+  .checkout-card hr {
+    margin: 20px 0;
+  }
+
+  .checkout-summary {
+    order: 2;
+  }
+
+  .summary-title {
+    padding-bottom: 13px;
+  }
+
+  .summary-title h2 {
+    font-size: 20px;
+  }
+
+  .summary-item {
+    gap: 9px;
+    padding: 10px;
+  }
+
+  .summary-item img {
+    width: 68px;
+    height: 68px;
+    flex: 0 0 68px;
+  }
+
+  .summary-item b {
+    overflow-wrap: anywhere;
+  }
+
+  .summary-event {
+    align-items: flex-start;
+    font-size: 10px;
+  }
+
+  .summary-lines {
+    gap: 10px;
+  }
+
+  .checkout-submit {
+    min-height: 50px;
+    padding: 13px 10px;
+    font-size: 14px;
+  }
+
+  .terms {
+    font-size: 9px;
+  }
+
+  .checkout-trust {
+    gap: 9px;
+    padding: 4px 0 4px;
   }
 }
